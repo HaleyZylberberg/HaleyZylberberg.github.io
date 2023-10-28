@@ -1,0 +1,116 @@
+---
+title: "Haley Zylberberg's CV"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+***
+
+## Training
+
+* Division of Digestive and Liver Diseases, Department of Medicine,
+Presbyterian Hospital / Columbia University Irving Medical Center, New York, NY	(Jul. 2023 - present)     
+
+    * Chief Gastroenterology Fellow	
+    
+&nbsp;
+
+* Division of Digestive and Liver Diseases, Department of Medicine   			Presbyterian Hospital / Columbia University Irving Medical Center, New York, NY		(Jul. 2021 - present)			
+
+    * Clinical Fellow in Gastroenterology
+    * Expected graduation: June 2024
+    
+&nbsp;
+    
+* Department of Medicine, Mount Sinai Hospital, New York, NY			
+(Jul. 2018 - Jun. 2021)
+
+    * Internal Medicine Resident
+    * ABIM certified, 2021
+    
+***
+
+## Education 
+
+* Columbia University Mailman School of Public Health, New York, NY		
+
+    * Candidate for MS in Patient Oriented Research
+    * Jul. 2022 - present; expected graduation: June 2024
+    
+&nbsp;
+
+* Hofstra Northwell School of Medicine, Hempstead, NY			         	    	              
+    * MD with Distinction in Research
+    * Aug. 2013 - May 2018
+
+&nbsp;
+
+* Columbia University, New York, NY				    		                               
+
+    * BA in Neuroscience and Behavior from Columbia College
+    * Sep. 2009 - May 2013
+    * Honors: cum laude, Dean’s List: Fall 2009 - Fall 2012
+
+***
+
+## Clinical Research Experience  
+
+
+* Celiac Disease Center at Columbia University, New York, NY 
+(Jul. 2016 - Jun. 2017 )                                                          
+
+    * Research Fellow in celiac disease between my third and fourth years of medical school
+    * Mentored by Drs. Benjamin Lebwohl and Peter Green, who I partnered with to complete multiple research projects, publications, and presentations at national conferences
+    * Supported by a T35 training grant (Kirschstein-NRSA) from NIDDK
+
+***
+
+## Award and Grants 
+
+* International Society for the Study of Celiac Disease Mentee-in-Mentorship Programme Grant	(2023 - present)
+* Ruth L. Kirschstein NRSA Institutional Research Training Grant (T32) from the National Institute of Health (2022 - present)
+* American Gastroenterological Association Fellow Abstract Award for “Adherence to Biopsy Guidelines Increases Celiac Disease Diagnosis: A Relook a Decade Later” (2022)					
+* Outstanding Poster Presenter for “Opioid Use Increases Survival in Patients with Pancreatic Cancer:A Propensity Score Analysis,” American College of Gastroenterology Annual Meeting (2022)	
+* Department of Medicine Award, Hofstra Northwell School of Medicine (2018)
+* Young Investigator Travel Grant, American Society for Bone and Mineral Research Annual Meeting (2017)       
+* Plenary poster presentation “Predictors of Improvement in Bone Mineral Density after Celiac Disease Diagnosis,” American Society for Bone and Mineral Research Annual Meeting (2017)
+* Ruth L. Kirschstein NRSA, Short-Term Institutional Research Training Grant (T35) from the National Institute of Diabetes and Digestive and Kidney Diseases (2017)
+
+***
+
+## Selected Publications 
+
+[Please see pubmed](https://pubmed.ncbi.nlm.nih.gov/?term=zylberberg+hm&sort=date)
+
+1. **Zylberberg HM**, Lebwohl B, Roelstraete B, Soderling J, Stephansson O, Green PHR, Ludvigsson JF. No Increased Risk of Cardiac Birth Defects Among Offspring of Mothers with Celiac Disease: A Population and Sibling Comparison. Am J Gastroenterol. 2023 May. Online ahead of print. 
+2. Rustgi SD, **Zylberberg HM**, Hur C, Shah SC. Management of Gastric Intestinal Metaplasia. Clin Gastroenterol Hepatol. 2023 Apr;S1542-3565(23)00218-5.
+3. Wang CP, **Zylberberg HM**, Borman ZA, Engelman S, Yanes R, Hirten RP, Sands BE, Cohel BL, Ungaro RC, Rao BB. Impact of Care in an Interdisciplinary Inflammatory Bowel Disease Specialty Clinic on Outcomes in Patients Insured with Medicaid. J Clin Gastroenterol. 2022 Sep. DOI: 10.1097/MCG.0000000000001769
+4. Rustgi SD, **Zylberberg HM**, Hur C. Databases for Gastrointestinal Clinical and Public Health Research: Have Database, Will Research. Gastroenterology. 2022 July;163(1):31-34.
+5. **Zylberberg HM**, Woodrell C, Rustgi SD, Aronson A, Kessel E, Amin S, Lucas AL. Opioid Prescription Is Associated with Increased Survival in Older Adult Patients with Pancreatic Cancer in the United States: A Propensity Score Analysis. JCO Oncol Pract. 2022 May; 18(5):e659-e668.
+6.	**Zylberberg HM**, Nagula S, Rustgi SD, Aronson A, Kessel E, Kumta NK, DiMaio CJ, Lucas AL. Celiac Plexus Neurolysis is Associated with Decreased Survival in Patients with Pancreatic Cancer: A Propensity Score Analysis. Pancreas. 2022 Feb;51(2):153-158.
+7.	**Zylberberg HM**, Rustgi SD, Yang A, Aronson A, Kessel E, Amin S, Lucas AL. Bisphosphonate Use Does Not Impact Survival in Patients with Pancreatic Cancer: A Propensity Score Matching Analysis. Gut Liver. 2021 Sep;15(5):782-790.
+8.	Rabinowitz LG, Grinspan LT, **Zylberberg HM**, Dixon R, David YN, Aroniadis OC, Chiang A, Christie J, Fayad NF, Ha C, Harris LA, Ko CW, Kolb J, Kwah J, Lee L, Lieberman D, Raffals LE, Rex DK, Shah SC, Siddiqui UD, Smith MS, Wallace M, Williams R, Woods K, Crowe SE, Kumta NA, Kim MK, Greenwald DA. Survey Finds Gender Disparities Impact Both Women Mentors and Mentees in Gastroenterology. Am J Gastroenterol. 2021 Sep;116(9):1876-1884.
+9.	**Zylberberg HM**, Kamboj AK, De Cuir N, Lane CM, Khanna S, Pardi DS, Lebwohl B. Medication Use and Microscopic Colitis: A Multicentre Retrospective Cohort Study. Aliment Pharmacol Ther. 2021 Jun; 53(11):1209-1215.
+10.	Rabinowitz LG, Grinspan LT, Williams K, **Zylberberg HM**, David Y, Kumta N, Greenwald D, Carr P, Kim MK. Gender Dynamics in the Education and Practice of Gastroenterology. Gastrointest Endoosc 2021 May;93(5):1047-1056.  
+11.	Yang A, **Zylberberg HM**, Rustgi SD, Amin SP, Bar-Mashia A, Bofetta P, Lucas AL. Beta-blockers Have No Impact on Survival in Pancreatic Ductal Adenocarcinoma. Scientific Reports. 2021 Jan; 11(1):1038.
+12.	**Zylberberg HM**, Yates S, Borsoi C, Green PHR, Lebwohl B. Regional and National Variations in Reasons for Gluten Avoidance. J Clin Gastroenterol 2018 Sep; 52(8): 696-702.
+13.	**Zylberberg HM**, Ludvigsson JF, Green PHR, Lebwohl B. Psychotropic Medication Use Among Patients with Celiac Disease. BMC Psychiatry 2018 Mar; 18(1): 76.
+14.	**Zylberberg HM**, Demmer RT, Murray JA, Green PHR, Lebwohl B. Depression and Insomnia among Individuals with Celiac Disease or on a Gluten-Free Diet in the USA: Results from a National Survey. Eur J Gastroenterol Hepatol 2017 Sep; 29(9): 1091-1096. 
+15.	**Zylberberg HM**, Green PHR, Turner KO, Genta RM, Lebwohl B. Prevalence and Predictors of Giardia in the United States. Dig Dis Sci 2017 Feb; 62(2): 432-440. 
+***
+
+## Selected Oral Presentations
+1.	**Zylberberg HM**, Lebwohl B, Roelstraete B, Soderling J, Stephansson O, Green PHR, Ludvigsson JF. No Increased Risk of Cardiac Birth Defects Among Offspring of Mothers with Celiac Disease: A Population and Sibling Comparison. Presented at Columbia University Medical Center’s Medicine Grand Rounds, April 2023.
+2.	**Zylberberg HM**, Genta RM, Turner K, Singhal A, Green PHR, Lebwohl B. Adherence to Biopsy Guidelines Increases Celiac Disease Diagnosis: A Relook a Decade Later. Presented at Digestive Disease Week May 2022 Annual Meeting.
+
+***
+
+## Selected Poster Presentations
+1.	**Zylberberg HM**, Lebwohl B, Roelstraete B, Soderling J, Stephansson O, Green PHR, Ludvigsson JF. No Increased Risk of Cardiac Birth Defects Among Offspring of Mothers with Celiac Disease: A Population and Sibling Comparison. Presented at Digestive Disease Week May 2023 Annual Meeting.
+2.	**Zylberberg HM**, Miller EBP, Ratner A, Hammill BG, Mehta P, Alesci S, Lebwohl B. Correlations Between Relative Prevalence of Celiac Disease and Sociodemographic Variables in the United States. Presented at Digestive Disease Week May 2023 Annual Meeting.
+3.	**Zylberberg HM**; Tan S, Ferris JS, Soroush A, Abrams JA, Lightdale CJ, Laszkowska M, Hur C. Racial Differences in Gastroesophageal Junction Cancer Mortality: A Joinpoint SEER Database Analysis. Presented at Digestive Disease Week May 2022 Annual Meeting.
+
+

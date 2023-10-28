@@ -7,4 +7,10 @@ output:
     theme: cerulean
 ---
 
-# This is Haley Zylberberg's Website
+# About Me
+
+I have lived in New York my entire life and have completed all of my training here. I attended Columbia University for my undergraduate degree, Zucker School of Medicine at Hofstra/Northwell for medical school, and Mount Sinai Icahn School of Medicine for internal medicine residency. Currently, I am completing my GI fellowship at NYP – Columbia, where I am the chief fellow. As I complete my fellowship, I am also pursuing a master’s degree in patient-oriented research at the Columbia Mailman School of Public Health. Throughout my training, I’ve had a sustained interest in academic research, with a focus on celiac disease and have many publications in this area.
+
+# CV
+
+[Please see here for CV](CV.html)
