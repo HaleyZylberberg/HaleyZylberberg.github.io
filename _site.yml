@@ -9,7 +9,7 @@ navbar:
       href: mailto:<haley.zylberberg@gmail.com>
     - icon: fa-github fa-lg
       href: http://github.com/haleyZylberberg
-    - text: "Doximity"
+    - text: "Doximity Med"
       href: https://www.doximity.com/pub/haley-zylberberg-md
 output:
   html_document:
