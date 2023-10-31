@@ -12,75 +12,10 @@ I have lived in New York my entire life and have completed all of my training he
 
 * Please see here for my [CV](CV.html).
 
-***
+## Sample Project
 
-## Sample Project:
+I will use data from the publicly available NYC restaurant inspection to evaluate the worst health grading of C throughout the 5 boroughs in the year 2016 (the most recent year with complete data). 
 
-I will use data from the publicaly available NYC restaurant inspection to evaluate the worst health grading of C throughout the 5 boroughs in the year 2016 (the most recent year with complete data).
+* Please see here for the [dashboard](dashboard.html).
 
-First will call in libraries and dataset.
-```{r set up}
-library(tidyverse)
-library(p8105.datasets)
-library(plotly)
-library(p8105.datasets)
-data ("rest_inspec")
-```
 
-Next, will clean data set. Limit the data to year 2016. Will seperate out the months.
-```{r}
-rest_df =
-  rest_inspec |>
- separate(inspection_date, into = c("year", "month", "day"), sep = "-") |>
-  mutate(
-    year = as.integer(year),
-    month = as.integer(month),
-    month_name = month.abb[month]
-  ) |>
-  filter (year == 2016 & grade == "C")
-```
-
-Next will make plots!
-
-First will make a bar graph to see which borough had the largest number of C grades.
-
-```{r bar graph}
-rest_df  |>
-  count(boro) |>
-  mutate(boro = fct_reorder(boro, n))  |>
-  plot_ly(x = ~boro, y = ~n, color = ~boro, type = "bar", colors = "viridis") |>
-layout(xaxis = list(title = 'Boroughs'), font=t,
-         yaxis = list(title = 'Count'), legend = list(title=list(text='Boroughs')))
-```
-
-Manhattan has the highest number of C grade restaurants, at 890, while Staten Island has the lowest at 43.
-
-Next, make a line graph to determine which month had the most grade C ratings.
-```{r line graph}
-rest_df  |>
-mutate(month_name = factor(month_name, levels = month.abb))|>
-  group_by (month_name, boro)|>
-  count(boro) |>
-plot_ly(
-    x = ~month_name, y = ~n, type = "scatter", mode = "line",
-    color = ~boro, alpha = 0.5, colors = "viridis") |>
-layout(xaxis = list(title = 'Months in 2016'), font=t,
-         yaxis = list(title = 'Count'), legend = list(title=list(text='Boroughs')))
-```
-
-Most of the grade C restaurants were inspected in the summer (June through August). The peak of C grading occurred in Manhattan in August.
-
-Next, shows a scatter plot of the scoring distribution by cuisine type for each borough.
-
-```{r scatter plot}
-
-rest_df  |>
-  mutate(text_label = str_c("Zip Code:", zipcode)) |> 
-plot_ly(
-    x = ~cuisine_description, y = ~score, type = "scatter", mode = "markers",
-    color = ~boro, alpha = 0.5, colors = "viridis", text = ~text_label, width = 600, height = 500) |>
-  layout(xaxis = list(title = 'Cuisine Type'), font=t,
-         yaxis = list(title = 'Score'))
-```
-
-This plot allows the viewer to zoom in and see granular data of restaurant score per cuisine type per borough. The worst score occurred in Manhattan at zip code 10065 and was of an Indian restaurant, with a score of 83. Since there are scores less than 28 (which is needed to get a grade of C), this suggests that there were restaurants that improved in their score after re-inspection but did not yet have their grade changed.

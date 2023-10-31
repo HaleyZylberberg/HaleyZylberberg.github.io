@@ -1,0 +1,71 @@
+---
+title: "Grade C Restaurant Inspection Data in NYC From 2016"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(p8105.datasets)
+data ("rest_inspec")
+
+rest_df =
+  rest_inspec |>
+ separate(inspection_date, into = c("year", "month", "day"), sep = "-") |>
+  mutate(
+    year = as.integer(year),
+    month = as.integer(month),
+    month_name = month.abb[month]
+  ) |>
+  filter (year == 2016 & grade == "C")
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Scoring by Cuisine Type Across the Boroughs 
+
+```{r scatter plot}
+rest_df  |>
+  mutate(text_label = str_c("Zip Code:", zipcode)) |> 
+plot_ly(
+    x = ~cuisine_description, y = ~score, type = "scatter", mode = "markers",
+    color = ~boro, alpha = 0.5, colors = "viridis", text = ~text_label, width = 600, height = 500) |>
+  layout(xaxis = list(title = 'Cuisine Type'), font=t,
+         yaxis = list(title = 'Score'))
+```
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Number of Graded C Scores per Borough
+
+```{r bar graph}
+rest_df  |>
+  count(boro) |>
+  mutate(boro = fct_reorder(boro, n))  |>
+  plot_ly(x = ~boro, y = ~n, color = ~boro, type = "bar", colors = "viridis") |>
+layout(xaxis = list(title = 'Boroughs'), font=t,
+         yaxis = list(title = 'Count'), legend = list(title=list(text='Boroughs')))
+```
+
+### Number of Grade C Scores per Month per Borough
+
+```{r line graph}
+rest_df  |>
+mutate(month_name = factor(month_name, levels = month.abb))|>
+  group_by (month_name, boro)|>
+  count(boro) |>
+plot_ly(
+    x = ~month_name, y = ~n, type = "scatter", mode = "line",
+    color = ~boro, alpha = 0.5, colors = "viridis") |>
+layout(xaxis = list(title = 'Months in 2016'), font=t,
+         yaxis = list(title = 'Count'), legend = list(title=list(text='Boroughs')))
+```
+

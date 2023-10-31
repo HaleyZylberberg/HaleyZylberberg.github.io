@@ -5,12 +5,14 @@ navbar:
   right:
     - text: "CV"
       href: CV.html
-    - icon: fa-envelope fa-lg
-      href: mailto:<haley.zylberberg@gmail.com>
+    - text: "Dashboard"
+      href: dashboard.html
     - icon: fa-github fa-lg
       href: http://github.com/haleyZylberberg
     - icon: fa-solid fa-stethoscope
       href: https://www.doximity.com/pub/haley-zylberberg-md
+    - icon: fa-envelope fa-lg
+      href: mailto:<haley.zylberberg@gmail.com>
 output:
   html_document:
     theme: cerulean

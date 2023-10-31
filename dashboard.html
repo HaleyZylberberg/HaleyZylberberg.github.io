@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>Grade C Restaurant Inspection Data in NYC From 2016</title>
+
+<meta property="og:title" content="Grade C Restaurant Inspection Data in NYC From 2016" />
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+<link rel="icon" href="data:image/x-icon;" type="image/x-icon">
+
+
+<script type="text/javascript">
+window.FlexDashboardComponents = [];
+</script>
+
+<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
+<link href="site_libs/value-box-accent-static-0.6.2/theme-cosmo-value-box.css" rel="stylesheet" />
+<link href="site_libs/flexdashboard-css-0.6.2/flexdashboard.min.css" rel="stylesheet" />
+<link href="site_libs/flexdashboard-css-0.6.2/theme-cosmo.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.3/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<style type="text/css">
+/*
+  CSS for flexdashboard.js' use of Sly(). The sizing/position of this CSS needs to be
+  applied _before_ flexdashboard.js initializes, which is why this CSS has been pulled
+  out from flexdashboard.scss and inlined in the document's head.
+*/
+
+.storyboard-nav button {
+  background: transparent;
+  border: 0;
+  opacity: .3;
+  outline: none;
+  padding: 0;
+}
+
+.storyboard-nav button:hover,
+.storyboard-nav button:hover {
+  opacity: .5;
+}
+
+.storyboard-nav button:disabled,
+.storyboard-nav button:disabled {
+  opacity: .1;
+}
+
+.storyboard-nav .sbnext,
+.storyboard-nav .sbprev {
+  float: left;
+  width: 2%;
+  height: 120px;
+}
+
+.storyboard-nav .sbprev {
+  text-align: left;
+  width: 2%;
+}
+
+.storyboard-nav .sbnext {
+  float: right;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.storyboard-nav .sbframelist {
+  margin: 0 auto;
+  width: 94%;
+  height: 120px;
+  overflow: hidden;
+  text-shadow: none;
+  margin-bottom: 8px;
+}
+
+.storyboard-nav .sbframelist ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.storyboard-nav .sbframelist ul li {
+  float: left;
+  width: 270px;
+  height: 100%;
+  padding: 10px 10px 10px 10px;
+  margin-right: 8px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.storyboard-nav .sbframelist ul li:last-child {
+  margin-right: 0px;
+}
+
+.sbframe-commentary {
+  width: 300px;
+}
+
+.sbframe-commentary ul {
+  padding-left: 22px;
+}
+
+.sbframe.active {
+  display: flex;
+}
+
+.sbframe:not(.active) {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+html, body {
+  height: 100%;
+}
+
+#dashboard-container {
+  height: 100%;
+}
+}
+</style>
+
+
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+
+<span class="navbar-logo pull-left">
+  
+</span>
+<span class="navbar-brand">
+  Grade C Restaurant Inspection Data in NYC From 2016
+  <span class="navbar-author">
+        </span>
+</span>
+
+<button id="navbar-button" type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+
+</div>
+<div id="navbar" class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-left">
+</ul>
+<ul class="nav navbar-nav navbar-right">
+</ul>
+</div><!--/.nav-collapse-->
+</div><!--/.container-->
+</div><!--/.navbar-->
+
+<script type="text/javascript">
+
+
+var FlexDashboard = (function () {
+
+  // initialize options
+  var _options = {};
+
+  var FlexDashboard = function() {
+
+    // default options
+    _options = $.extend(_options, {
+      theme: "cosmo",
+      fillPage: false,
+      orientation: 'columns',
+      storyboard: false,
+      defaultFigWidth: 576,
+      defaultFigHeight: 461,
+      defaultFigWidthMobile: 360,
+      defaultFigHeightMobile: 461,
+      isMobile: false,
+      isPortrait: false,
+      resize_reload: true
+    });
+  };
+
+  function init(options) {
+
+    // extend default options
+    $.extend(true, _options, options);
+
+    // add ids to sections that don't have them (pandoc won't assign ids
+    // to e.g. sections with titles consisting of only chinese characters)
+    var nextId = 1;
+    $('.level1:not([id]),.level2:not([id]),.level3:not([id])').each(function() {
+      $(this).attr('id', 'dashboard-' + nextId++);
+    });
+
+    // find navbar items
+    var navbarItems = $('#flexdashboard-navbar');
+    if (navbarItems.length)
+      navbarItems = JSON.parse(navbarItems.html());
+    addNavbarItems(navbarItems);
+
+    // find the main dashboard container
+    var dashboardContainer = $('#dashboard-container');
+
+    // resolve mobile classes
+    resolveMobileClasses(dashboardContainer);
+
+    // one time global initialization for components
+    componentsInit(dashboardContainer);
+
+    // look for a global sidebar
+    var globalSidebar = dashboardContainer.find(".section.level1.sidebar");
+    if (globalSidebar.length > 0) {
+
+      // global layout for fullscreen displays
+      if (!isMobilePhone()) {
+
+         // hoist it up to the top level
+         globalSidebar.insertBefore(dashboardContainer);
+
+         // lay it out (set width/positions)
+         layoutSidebar(globalSidebar, dashboardContainer);
+
+      // tuck sidebar into first page for mobile phones
+      } else {
+
+        // convert it into a level3 section
+        globalSidebar.removeClass('sidebar');
+        globalSidebar.removeClass('level1');
+        globalSidebar.addClass('level3');
+        var h1 = globalSidebar.children('h1');
+        var h3 = $('<h3></h3>');
+        h3.append(h1.contents());
+        h3.insertBefore(h1);
+        h1.detach();
+
+        // move it into the first page
+        var page = dashboardContainer.find('.section.level1').first();
+        if (page.length > 0)
+          page.prepend(globalSidebar);
+      }
+    }
+
+    // look for pages to layout
+    var pages = $('div.section.level1');
+    if (pages.length > 0) {
+
+        // find the navbar and collapse on clicked
+        var navbar = $('#navbar');
+        navbar.on("click", "a[data-toggle!=dropdown]", null, function () {
+           navbar.collapse('hide');
+        });
+
+        // envelop the dashboard container in a tab content div
+        dashboardContainer.wrapInner('<div class="tab-content"></div>');
+
+        pages.each(function(index) {
+
+          // lay it out
+          layoutDashboardPage($(this));
+
+          // add it to the navbar
+          addToNavbar($(this), index === 0);
+
+        });
+
+    } else {
+
+      // remove the navbar and navbar button if we don't
+      // have any navbuttons
+      if (navbarItems.length === 0) {
+        $('#navbar').remove();
+        $('#navbar-button').remove();
+      }
+
+      // add the storyboard class if requested
+      if (_options.storyboard)
+        dashboardContainer.addClass('storyboard');
+
+      // layout the entire page
+      layoutDashboardPage(dashboardContainer);
+    }
+
+    // if we are in shiny we need to trigger a window resize event to
+    // force correct layout of shiny-bound-output elements
+    if (isShinyDoc())
+      $(window).trigger('resize');
+
+    // make main components visible
+    $('.section.sidebar').css('visibility', 'visible');
+    dashboardContainer.css('visibility', 'visible');
+
+    // handle location hash
+    handleLocationHash();
+
+    // intialize prism highlighting
+    initPrismHighlighting();
+
+    // record mobile and orientation state then register a handler
+    // to refresh if resize_reload is set to true and it changes
+    _options.isMobile = isMobilePhone();
+    _options.isPortrait = isPortrait();
+    if (_options.resize_reload) {
+      $(window).on('resize', function() {
+        if (_options.isMobile !== isMobilePhone() ||
+            _options.isPortrait !== isPortrait()) {
+          window.location.reload();
+        }
+      });
+    } else {
+      // if in desktop mode and resizing to mobile, make sure the heights are 100%
+      // This enforces what `fillpage.css` does for "wider" pages.
+      // Since we are not reloading once the page becomes small, we need to force the height to 100%
+      // This is a new situation introduced when `_options.resize_reload` is `false`
+      if (! _options.isMobile) {
+        // only add if `fillpage.css` was added in the first place
+        if (_options.fillPage) {
+          // fillpage.css
+          $("html,body,#dashboard").css("height", "100%");
+        }
+      }
+    }
+    // trigger layoutcomplete event
+    dashboardContainer.trigger('flexdashboard:layoutcomplete');
+  }
+
+  function resolveMobileClasses(dashboardContainer) {
+     // add top level layout class
+    dashboardContainer.addClass(isMobilePhone() ? 'mobile-layout' :
+                                                  'desktop-layout');
+
+    // look for .mobile sections and add .no-mobile to their peers
+    var mobileSections = $('.section.mobile');
+    mobileSections.each(function() {
+       var id = $(this).attr('id');
+       var nomobileId = id.replace(/-\d+$/, '');
+       $('#' + nomobileId).addClass('no-mobile');
+    });
+  }
+
+  function addNavbarItems(navbarItems) {
+
+    var navbarLeft = $('ul.navbar-left');
+    var navbarRight = $('ul.navbar-right');
+
+    for (var i = 0; i<navbarItems.length; i++) {
+
+      // get the item
+      var item = navbarItems[i];
+
+      // determine the container
+      var container = null;
+      if (item.align === "left")
+        container = navbarLeft;
+      else
+        container = navbarRight;
+
+      // navbar menu if we have multiple items
+      if (item.items) {
+        var menu = navbarMenu(null, item.icon, item.title, container);
+        for (var j = 0; j<item.items.length; j++) {
+          var subItem = item.items[j];
+          var li = $('<li></li>');
+          var a = navbarLink(subItem.icon, subItem.title, subItem.href, subItem.target);
+          a.removeClass("nav-link").addClass("dropdown-item");
+          li.append(a);
+          menu.append(li);
+        }
+      } else {
+        var li = $('<li class="nav-item"></li>');
+        li.append(navbarLink(item.icon, item.title, item.href, item.target));
+        container.append(li);
+      }
+    }
+  }
+
+  // create or get a reference to an existing dropdown menu
+  function navbarMenu(id, icon, title, container) {
+    var existingMenu = [];
+    if (id)
+      existingMenu = container.children('#' + id);
+    if (existingMenu.length > 0) {
+      return existingMenu.children('ul');
+    } else {
+      var li = $('<li class="nav-item"></li>');
+      if (id)
+        li.attr('id', id);
+      li.addClass('dropdown');
+      // auto add "Share" title on mobile if necessary
+      if (!title && icon && (icon === "fa-share-alt") && isMobilePhone())
+        title = "Share";
+      if (title) {
+        title = title + ' <span class="caret"></span>';
+      }
+      var a = navbarLink(icon, title, "#");
+      a.addClass('dropdown-toggle');
+      a.attr('data-toggle', 'dropdown');
+      a.attr('data-bs-toggle', 'dropdown');
+      a.attr('role', 'button');
+      a.attr('aria-expanded', 'false');
+      li.append(a);
+      var ul = $('<ul class="dropdown-menu"></ul>');
+      ul.attr('role', 'menu');
+      li.append(ul);
+      container.append(li);
+      return ul;
+    }
+  }
+
+  function addToNavbar(page, active) {
+
+    // capture the id and data-icon attribute (if any)
+    var id = page.attr('id');
+    var icon = page.attr('data-icon');
+    var navmenu = page.attr('data-navmenu');
+    var navmenuIcon = page.attr('data-navmenu-icon');
+
+    // get hidden state (transfer this to navbar)
+    var hidden = page.hasClass('hidden');
+    page.removeClass('hidden');
+
+    // sanitize the id for use with bootstrap tabs
+    id = id.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_');
+    page.attr('id', id);
+
+    // get the wrapper
+    var wrapper = page.closest('.dashboard-page-wrapper');
+
+    // move the id to the wrapper
+    page.removeAttr('id');
+    wrapper.attr('id', id);
+
+    // add the tab-pane class to the wrapper
+    wrapper.addClass('tab-pane');
+
+    // get a reference to the h1, discover its inner contens, then detach it
+    var h1 = wrapper.find('h1').first();
+    var title = h1.contents();
+    h1.detach();
+
+    // create a navbar item
+    var li = $('<li></li>');
+    var a = navbarLink(icon, title, '#' + id);
+    a.attr('data-toggle', 'tab');
+    a.attr('data-bs-toggle', 'tab');
+    li.append(a);
+
+    // add it to the navbar (or navbar menu if specified)
+    var container = $('ul.navbar-left');
+    if (navmenu) {
+      var menuId = navmenu.replace(/\s+/g, '');
+      var menu = navbarMenu(menuId, navmenuIcon, navmenu, container);
+      li.find("> a").removeClass("nav-link").addClass("dropdown-item");
+      menu.append(li);
+    } else {
+      li.addClass("nav-item")
+      container.append(li);
+    }
+
+    // mark active tab and corresponding nav menu item
+    if (active)
+      $(a).tab("show");
+
+    // hide it if requested
+    if (hidden)
+      li.addClass('hidden');
+  }
+
+  function navbarLink(icon, title, href, target) {
+
+    var a = $('<a class="nav-link"></a>');
+    if (icon) {
+
+      // get the name of the icon set and icon
+      var dashPos = icon.indexOf("-");
+      var iconSet = null;
+      var iconSplit = icon.split(" ");
+      if (iconSplit.length > 1) {
+        iconSet = iconSplit[0];
+        icon = iconSplit.slice(1).join(" ");
+      } else {
+        iconSet = icon.substring(0, dashPos);
+      }
+      var iconName = icon.substring(dashPos + 1);
+
+      // create the icon
+      var iconElement = $('<span class="' + iconSet + ' ' + icon + '"></span>');
+      if (title)
+        iconElement.css('margin-right', '7px');
+      a.append(iconElement);
+      // if href is null see if we can auto-generate based on icon (e.g. social)
+      if (!href)
+        maybeGenerateLinkFromIcon(iconName, a);
+    }
+    if (title)
+      a.append(title);
+
+    // add the href.
+    if (href) {
+      if (href === "source_embed") {
+        a.attr('href', '#');
+        a.attr('data-featherlight', "#flexdashboard-source-code");
+        a.featherlight({
+            beforeOpen: function(event){
+              $('body').addClass('unselectable');
+            },
+            afterClose: function(event){
+              $('body').removeClass('unselectable');
+            }
+        });
+      } else {
+        a.attr('href', href);
+      }
+    }
+
+    // add the arget
+    if (target)
+      a.attr('target', target);
+
+    return a;
+  }
+
+  // auto generate a link from an icon name (e.g. twitter) when possible
+  function maybeGenerateLinkFromIcon(iconName, a) {
+
+     var serviceLinks = {
+      "twitter": "https://twitter.com/share?text=" + encodeURIComponent(document.title) + "&url="+encodeURIComponent(location.href),
+      "facebook": "https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(location.href),
+      "linkedin": "https://www.linkedin.com/shareArticle?mini=true&url="+encodeURIComponent(location.href) + "&title=" + encodeURIComponent(document.title),
+      "pinterest": "https://pinterest.com/pin/create/link/?url="+encodeURIComponent(location.href) + "&description=" + encodeURIComponent(document.title)
+    };
+
+    var makeSocialLink = function(a, href) {
+      a.attr('href', '#');
+      a.on('click', function(e) {
+        e.preventDefault();
+        window.open(href);
+      });
+    };
+
+    $.each(serviceLinks, function(key, value) {
+      if (iconName.indexOf(key) !== -1)
+        makeSocialLink(a, value);
+    });
+  }
+
+  // layout a dashboard page
+  function layoutDashboardPage(page) {
+
+    // use a page wrapper so that free form content above the
+    // dashboard appears at the top rather than the side (as it
+    // would without the wrapper in a column orientation)
+    var wrapper = $('<div class="dashboard-page-wrapper"></div>');
+    page.wrap(wrapper);
+
+    // if there are no level2 or level3 headers synthesize a level3
+    // header to contain the (e.g. frame it, scroll container, etc.)
+    var headers = page.find('h2,h3');
+    if (headers.length === 0)
+      page.wrapInner('<div class="section level3"></div>');
+
+    // hoist up any content before level 2 or level 3 headers
+    var children = page.children();
+    children.each(function(index) {
+      if ($(this).hasClass('level2') || $(this).hasClass('level3'))
+        return false;
+      $(this).insertBefore(page);
+    });
+
+    // determine orientation and fillPage behavior for distinct media
+    var orientation, fillPage, storyboard;
+
+    // media: mobile phone
+    if (isMobilePhone()) {
+
+      // if there is a sidebar we need to ensure it's content
+      // is properly framed as an h3
+      var sidebar = page.find('.section.sidebar');
+      sidebar.removeClass('sidebar');
+      sidebar.wrapInner('<div class="section level3"></div>');
+      var h2 = sidebar.find('h2');
+      var h3 = $('<h3></h3>');
+      h3.append(h2.contents());
+      h3.insertBefore(h2);
+      h2.detach();
+
+      // wipeout h2 elements then enclose them in a single h2
+      var level2 = page.find('div.section.level2');
+      level2.each(function() {
+        level2.children('h2').remove();
+        level2.children().unwrap();
+      });
+      page.wrapInner('<div class="section level2"></div>');
+
+      // substitute mobile images
+      if (isPortrait()) {
+        var mobileFigures = $('img.mobile-figure');
+        mobileFigures.each(function() {
+          // get the src (might be base64 encoded)
+          var src = $(this).attr('src');
+
+          // find it's peer
+          var id = $(this).attr('data-mobile-figure-id');
+          var img = $('img[data-figure-id=' + id + "]");
+          img.attr('src', src)
+             .attr('width', _options.defaultFigWidthMobile)
+             .attr('height', _options.defaultFigHeightMobile);
+        });
+      }
+
+      // hoist storyboard commentary into it's own section
+      if (page.hasClass('storyboard')) {
+        var commentaryHR = page.find('div.section.level3 hr');
+        commentaryHR.each(function() {
+          var commentary = $(this).nextAll().detach();
+          var commentarySection = $('<div class="section level3"></div>');
+          commentarySection.append(commentary);
+          commentarySection.insertAfter($(this).closest('div.section.level3'));
+          $(this).remove();
+        });
+      }
+
+      // force a non full screen layout by columns
+      orientation = _options.orientation = 'columns';
+      fillPage = _options.fillPage = false;
+      storyboard = _options.storyboard = false;
+
+    // media: desktop
+    } else {
+
+      // determine orientation
+      orientation = page.attr('data-orientation');
+      if (orientation !== 'rows' && orientation != 'columns')
+        orientation = _options.orientation;
+
+      // determine storyboard mode
+      storyboard = page.hasClass('storyboard');
+
+      // fillPage based on options (force for storyboard)
+      fillPage = _options.fillPage || storyboard;
+
+      // handle sidebar
+      var sidebar = page.find('.section.level2.sidebar');
+      if (sidebar.length > 0)
+        layoutSidebar(sidebar, page);
+    }
+
+    // give it and it's parent divs height: 100% if we are in fillPage mode
+    if (fillPage) {
+      page.addClass('vertical-layout-fill');
+      page.css('height', '100%');
+      page.parents('div').css('height', '100%');
+    } else {
+      page.addClass('vertical-layout-scroll');
+    }
+
+    // perform the layout
+    if (storyboard)
+      layoutPageAsStoryboard(page);
+    else if (orientation === 'rows')
+      layoutPageByRows(page, fillPage);
+    else if (orientation === 'columns')
+      layoutPageByColumns(page, fillPage);
+  }
+
+  function layoutSidebar(sidebar, content) {
+
+    // get it out of the header hierarchy
+    sidebar = sidebar.first();
+    if (sidebar.hasClass('level1')) {
+      sidebar.removeClass('level1');
+      sidebar.children('h1').remove();
+    } else if (sidebar.hasClass('level2')) {
+      sidebar.removeClass('level2');
+      sidebar.children('h2').remove();
+    }
+
+    // determine width
+    var sidebarWidth = isTablet() ? 220 : 250;
+    var dataWidth = parseInt(sidebar.attr('data-width'));
+    if (dataWidth)
+      sidebarWidth = dataWidth;
+
+    // set the width and shift the page right to accomodate the sidebar
+    sidebar.css('width', sidebarWidth + 'px');
+    content.css('padding-left', sidebarWidth + 'px');
+
+    // wrap it's contents in a form
+    sidebar.wrapInner($('<form></form>'));
+  }
+
+  function layoutPageAsStoryboard(page) {
+
+    // create storyboard navigation
+    var nav = $('<div class="storyboard-nav"></div>');
+
+    // add navigation buttons
+    var prev = $('<button class="sbprev"><i class="fa fa-angle-left"></i></button>');
+    nav.append(prev);
+    var next= $('<button class="sbnext"><i class="fa fa-angle-right"></i></button>');
+    nav.append(next);
+
+    // add navigation frame
+    var frameList = $('<div class="sbframelist"></div>');
+    nav.append(frameList);
+    var ul = $('<ul></ul>');
+    frameList.append(ul);
+
+     // find all the level3 sections (those are the storyboard frames)
+    var frames = page.find('div.section.level3');
+    frames.each(function() {
+
+      // mark it
+      $(this).addClass('sbframe');
+
+      // divide it into chart content and (optional) commentary
+      $(this).addClass('dashboard-column-orientation');
+
+      // stuff the chart into it's own div w/ flex
+      $(this).wrapInner('<div class="sbframe-component"></div>');
+      setFlex($(this), 1);
+      var frame = $(this).children('.sbframe-component');
+
+      // extract the title from the h3
+      var li = $('<li></li>');
+      var h3 = frame.children('h3');
+      li.append(h3.contents());
+      h3.detach();
+      ul.append(li);
+
+      // extract commentary
+      var hr = frame.children('hr');
+      if (hr.length) {
+        var commentary = hr.nextAll().detach();
+        hr.remove();
+        var commentaryFrame = $('<div class="sbframe-commentary"></div>');
+        commentaryFrame.addClass('flowing-content-shim');
+        commentaryFrame.addClass('flowing-content-container');
+        commentaryFrame.append(commentary);
+        $(this).append(commentaryFrame);
+
+        // look for a data-commentary-width attribute
+        var commentaryWidth = $(this).attr('data-commentary-width');
+        if (commentaryWidth)
+          commentaryFrame.css('width', commentaryWidth + 'px');
+      }
+
+      // layout the chart (force flex)
+      var result = layoutChart(frame, true);
+
+      // ice the notes if there are none
+      if (!result.notes)
+        frame.find('.chart-notes').remove();
+
+      // set flex on chart
+      setFlex(frame, 1);
+    });
+
+    // create a div to hold all the frames
+    var frameContent = $('<div class="sbframe-content"></div>');
+    frameContent.addClass('dashboard-row-orientation');
+    frameContent.append(frames.detach());
+
+    // row orientation to stack nav and frame content
+    page.addClass('dashboard-row-orientation');
+    page.append(nav);
+    page.append(frameContent);
+    setFlex(frameContent, 1);
+
+    // initialize sly
+    var sly = new Sly(frameList, {
+    		horizontal: true,
+    		itemNav: 'basic',
+    		smart: true,
+    		activateOn: 'click',
+    		startAt: 0,
+    		scrollBy: 1,
+    		activatePageOn: 'click',
+    		speed: 200,
+    		moveBy: 600,
+    		dragHandle: true,
+    		dynamicHandle: true,
+    		clickBar: true,
+    		keyboardNavBy: 'items',
+    		next: next,
+    		prev: prev
+    	}).init();
+
+    // make first frame active
+    frames.removeClass('active');
+    frames.first().addClass('active');
+
+    // subscribe to frame changed events
+    sly.on('active', function (eventName, itemIndex) {
+      frames.removeClass('active');
+      frames.eq(itemIndex).addClass('active')
+                          .trigger('shown');
+    });
+  }
+
+  function layoutPageByRows(page, fillPage) {
+
+    // row orientation
+    page.addClass('dashboard-row-orientation');
+
+    // find all the level2 sections (those are the rows)
+    var rows = page.find('div.section.level2');
+
+    // if there are no level2 sections then treat the
+    // entire page as if it's a level 2 section
+    if (rows.length === 0) {
+      page.wrapInner('<div class="section level2"></div>');
+      rows = page.find('div.section.level2');
+    }
+
+    rows.each(function () {
+
+      // flags
+      var haveNotes = false;
+      var haveFlexHeight = true;
+
+      // remove the h2
+      $(this).children('h2').remove();
+
+      // check for a tabset
+      var isTabset = $(this).hasClass('tabset');
+      if (isTabset)
+        layoutTabset($(this));
+
+      // give it row layout semantics if it's not a tabset
+      if (!isTabset)
+        $(this).addClass('dashboard-row');
+
+      // find all of the level 3 subheads
+      var columns = $(this).find('div.section.level3');
+
+      // determine figureSizes sizes
+      var figureSizes = chartFigureSizes(columns);
+
+      // fixup the columns
+      columns.each(function(index) {
+
+        // layout the chart (force flex if we are in a tabset)
+        var result = layoutChart($(this), isTabset);
+
+        // update flexHeight state
+        if (!result.flex)
+          haveFlexHeight = false;
+
+        // update state
+        if (result.notes)
+          haveNotes = true;
+
+        // set the column flex based on the figure width
+        // (value boxes will just get the default figure width)
+        var chartWidth = figureSizes[index].width;
+        setFlex($(this), chartWidth + ' ' + chartWidth + ' 0px');
+
+      });
+
+      // remove empty chart note divs
+      if (isTabset)
+        $(this).find('.chart-notes').filter(function() {
+            return $(this).html() === "&nbsp;";
+        }).remove();
+      if (!haveNotes)
+        $(this).find('.chart-notes').remove();
+
+       // make it a flexbox row
+      if (haveFlexHeight)
+        $(this).addClass('dashboard-row-flex');
+
+      // now we can set the height on all the wrappers (based on maximum
+      // figure height + room for title and notes, or data-height on the
+      // container if specified). However, don't do this if there is
+      // no flex on any of the constituent columns
+      var flexHeight = null;
+      var dataHeight = parseInt($(this).attr('data-height'));
+      if (dataHeight)
+        flexHeight = adjustedHeight(dataHeight, columns.first());
+      else if (haveFlexHeight)
+        flexHeight = maxChartHeight(figureSizes, columns);
+      if (flexHeight) {
+        if (fillPage)
+          setFlex($(this), flexHeight + ' ' + flexHeight + ' 0px');
+        else {
+          $(this).css('height', flexHeight + 'px');
+          setFlex($(this), '0 0 ' + flexHeight + 'px');
+        }
+      }
+
+    });
+  }
+
+  function layoutPageByColumns(page, fillPage) {
+
+    // column orientation
+    page.addClass('dashboard-column-orientation');
+
+    // find all the level2 sections (those are the columns)
+    var columns = page.find('div.section.level2');
+
+    // if there are no level2 sections then treat the
+    // entire page as if it's a level 2 section
+    if (columns.length === 0) {
+      page.wrapInner('<div class="section level2"></div>');
+      columns = page.find('div.section.level2');
+    }
+
+    // layout each column
+    columns.each(function (index) {
+
+      // remove the h2
+      $(this).children('h2').remove();
+
+      // make it a flexbox column
+      $(this).addClass('dashboard-column');
+
+      // check for a tabset
+      var isTabset = $(this).hasClass('tabset');
+      if (isTabset)
+        layoutTabset($(this));
+
+      // find all the h3 elements
+      var rows = $(this).find('div.section.level3');
+
+      // get the figure sizes for the rows
+      var figureSizes = chartFigureSizes(rows);
+
+      // column flex is the max row width (or data-width if specified)
+      var flexWidth;
+      var dataWidth = parseInt($(this).attr('data-width'));
+      if (dataWidth)
+        flexWidth = dataWidth;
+      else
+        flexWidth = maxChartWidth(figureSizes);
+      setFlex($(this), flexWidth + ' ' + flexWidth + ' 0px');
+
+      // layout each chart
+      rows.each(function(index) {
+
+        // perform the layout
+        var result = layoutChart($(this), false);
+
+        // ice the notes if there are none
+        if (!result.notes)
+          $(this).find('.chart-notes').remove();
+
+        // set flex height based on figHeight, then adjust
+        if (result.flex) {
+          var chartHeight = figureSizes[index].height;
+          chartHeight = adjustedHeight(chartHeight, $(this));
+          if (fillPage)
+            setFlex($(this), chartHeight + ' ' + chartHeight + ' 0px');
+          else {
+            $(this).css('height', chartHeight + 'px');
+            setFlex($(this), chartHeight + ' ' + chartHeight + ' ' + chartHeight + 'px');
+          }
+        }
+      });
+    });
+  }
+
+  function chartFigureSizes(charts) {
+
+    // sizes
+    var figureSizes = new Array(charts.length);
+
+    // check each chart
+    charts.each(function(index) {
+
+      // start with default
+      figureSizes[index] = {
+        width: _options.defaultFigWidth,
+        height: _options.defaultFigHeight
+      };
+
+      // look for data-height or data-width then knit options
+      var dataWidth = parseInt($(this).attr('data-width'));
+      var dataHeight = parseInt($(this).attr('data-height'));
+      var knitrOptions = $(this).find('.knitr-options:first');
+      var knitrWidth, knitrHeight;
+      if (knitrOptions) {
+        knitrWidth = parseInt(knitrOptions.attr('data-fig-width'));
+        knitrHeight =  parseInt(knitrOptions.attr('data-fig-height'));
+      }
+
+      // width
+      if (dataWidth)
+        figureSizes[index].width = dataWidth;
+      else if (knitrWidth)
+        figureSizes[index].width = knitrWidth;
+
+      // height
+      if (dataHeight)
+        figureSizes[index].height = dataHeight;
+      else if (knitrHeight)
+        figureSizes[index].height = knitrHeight;
+    });
+
+    // return sizes
+    return figureSizes;
+  }
+
+  function maxChartHeight(figureSizes, charts) {
+
+    // first compute the maximum height
+    var maxHeight = _options.defaultFigHeight;
+    for (var i = 0; i<figureSizes.length; i++)
+      if (figureSizes[i].height > maxHeight)
+        maxHeight = figureSizes[i].height;
+
+    // now add offests for chart title and chart notes
+    if (charts.length)
+      maxHeight = adjustedHeight(maxHeight, charts.first());
+
+    return maxHeight;
+  }
+
+  function adjustedHeight(height, chart) {
+    if (chart.length > 0) {
+      var chartTitle = chart.find('.chart-title');
+      if (chartTitle.length)
+        height += chartTitle.first().outerHeight();
+      var chartNotes = chart.find('.chart-notes');
+      if (chartNotes.length)
+        height += chartNotes.first().outerHeight();
+    }
+    return height;
+  }
+
+  function maxChartWidth(figureSizes) {
+    var maxWidth = _options.defaultFigWidth;
+    for (var i = 0; i<figureSizes.length; i++)
+      if (figureSizes[i].width > maxWidth)
+        maxWidth = figureSizes[i].width;
+    return maxWidth;
+  }
+
+  // layout a chart
+  function layoutChart(chart, forceFlex) {
+
+    // state to return
+    var result = {
+      notes: false,
+      flex: false
+    };
+
+    // extract the title
+    var title = extractTitle(chart);
+
+    // find components that apply to this container
+    var components = componentsFind(chart);
+
+    // if it's a custom component then call it and return
+    var customComponents = componentsCustom(components);
+    if (customComponents.length) {
+      componentsLayout(customComponents, title, chart);
+      result.notes = false;
+      result.flex = forceFlex || componentsFlex(customComponents);
+      return result;
+    }
+
+    // put all the content in a chart wrapper div
+    chart.addClass('chart-wrapper');
+    chart.wrapInner('<div class="chart-stage"></div>');
+    var chartContent = chart.children('.chart-stage');
+
+    // flex the content if appropriate
+    result.flex = forceFlex || componentsFlex(components);
+    if (result.flex) {
+      // add flex classes
+      chart.addClass('chart-wrapper-flex');
+      chartContent.addClass('chart-stage-flex');
+
+      // additional shim to break out of flexbox sizing
+      chartContent.wrapInner('<div class="chart-shim"></div>');
+      chartContent = chartContent.children('.chart-shim');
+    }
+
+    // set custom data-padding attribute
+    var pad = chart.attr('data-padding');
+    if (pad) {
+      if (pad === "0")
+        chart.addClass('no-padding');
+      else {
+        pad = pad + 'px';
+        chartContent.css('left', pad)
+                    .css('top', pad)
+                    .css('right', pad)
+                    .css('bottom', pad)
+      }
+    }
+
+    // call compoents
+    componentsLayout(components, title, chartContent);
+
+    // also activate components on shiny output
+    findShinyOutput(chartContent).on('shiny:value',
+      function(event) {
+        var element = $(event.target);
+        setTimeout(function() {
+
+          // see if we opted out of flex based on our output (for shiny
+          // we can't tell what type of output we have until after the
+          // value is bound)
+          var components = componentsFind(element);
+          var flex = forceFlex || componentsFlex(components);
+          if (!flex) {
+            chart.css('height', "");
+            setFlex(chart, "");
+            chart.removeClass('chart-wrapper-flex');
+            chartContent.removeClass('chart-stage-flex');
+            chartContent.children().unwrap();
+          }
+
+          // perform layout
+          componentsLayout(components, title, element.parent());
+        }, 10);
+      });
+
+    // add the title
+    var chartTitle = $('<div class="chart-title"></div>');
+    chartTitle.append(title);
+    chart.prepend(chartTitle);
+
+    // add the notes section
+    var chartNotes = $('<div class="chart-notes"></div>');
+    chartNotes.html('&nbsp;');
+    chart.append(chartNotes);
+
+    // attempt to extract notes if we have a component
+    if (components.length)
+      result.notes = extractChartNotes(chartContent, chartNotes);
+
+    // return result
+    return result;
+  }
+
+  // build a tabset from a section div with the .tabset class
+  function layoutTabset(tabset) {
+
+    // check for fade option
+    var fade = tabset.hasClass("tabset-fade");
+    var pills = tabset.hasClass("tabset-pills");
+    var navClass = pills ? "nav-pills" : "nav-tabs";
+
+    // determine the heading level of the tabset and tabs
+    var match = tabset.attr('class').match(/level(\d) /);
+    if (match === null)
+      return;
+    var tabsetLevel = Number(match[1]);
+    var tabLevel = tabsetLevel + 1;
+
+    // find all subheadings immediately below
+    var tabs = tabset.find("div.section.level" + tabLevel);
+    if (!tabs.length)
+      return;
+
+    // create tablist and tab-content elements
+    var tabList = $('<ul class="nav ' + navClass + '" role="tablist"></ul>');
+    $(tabs[0]).before(tabList);
+    var tabContent = $('<div class="tab-content"></div>');
+    $(tabs[0]).before(tabContent);
+
+    // build the tabset
+    var activeTab = 0;
+    tabs.each(function(i) {
+
+      // get the tab div
+      var tab = $(tabs[i]);
+
+      // get the id then sanitize it for use with bootstrap tabs
+      var id = tab.attr('id');
+
+      // see if this is marked as the active tab
+      if (tab.hasClass('active'))
+        activeTab = i;
+
+      // sanitize the id for use with bootstrap tabs
+      id = id.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_');
+      tab.attr('id', id);
+
+      // get the heading element within it and grab it's text
+      var heading = tab.find('h' + tabLevel + ':first');
+      var headingDom = heading.contents();
+
+      // build and append the tab list item
+      var a = $('<a role="tab" data-toggle="tab" data-bs-toggle="tab" class="nav-link"></a>');
+      a.append(headingDom);
+      a.attr('href', '#' + id);
+      a.attr('aria-controls', id);
+      var li = $('<li role="presentation" class="nav-item"></li>');
+      li.append(a);
+      tabList.append(li);
+
+      // set it's attributes
+      tab.attr('role', 'tabpanel');
+      tab.addClass('tab-pane');
+      tab.addClass('tabbed-pane');
+      tab.addClass('no-title');
+      if (fade)
+        tab.addClass('fade');
+
+      // move it into the tab content div
+      tab.detach().appendTo(tabContent);
+    });
+
+    // set active tab
+    $(tabList.children()[activeTab]).tab("show");
+    var active = $(tabContent.children('div.section')[activeTab]);
+    active.addClass('active');
+    if (fade)
+      active.addClass('in');
+
+    // add nav-tabs-custom
+    tabset.addClass('nav-tabs-custom');
+
+    // internal layout is dashboard-column with tab-content flexing
+    tabset.addClass('dashboard-column');
+    setFlex(tabContent, 1);
+  }
+
+  // one time global initialization for components
+  function componentsInit(dashboardContainer) {
+    for (var i=0; i<window.FlexDashboardComponents.length; i++) {
+      var component = window.FlexDashboardComponents[i];
+      if (component.init)
+        component.init(dashboardContainer);
+    }
+  }
+
+  // find components that apply within a container
+  function componentsFind(container) {
+
+    // look for components
+    var components = [];
+    for (var i=0; i<window.FlexDashboardComponents.length; i++) {
+      var component = window.FlexDashboardComponents[i];
+      if (component.find(container).length)
+        components.push(component);
+    }
+
+    // if there were none then use a special flowing content component
+    // that just adds a scrollbar in fillPage mode
+    if (components.length == 0) {
+      components.push({
+        find: function(container) {
+          return container;
+        },
+
+        flex: function(fillPage) {
+          return fillPage;
+        },
+
+        layout: function(title, container, element, fillPage) {
+          if (fillPage) {
+            container.addClass('flowing-content-shim');
+            container.addClass('flowing-content-container');
+          }
+        }
+      });
+    }
+
+    return components;
+  }
+
+  // if there is a custom component then pick it out
+  function componentsCustom(components) {
+    var customComponent = [];
+    for (var i=0; i<components.length; i++)
+      if (components[i].type === "custom") {
+        customComponent.push(components[i]);
+        break;
+      }
+    return customComponent;
+  }
+
+  // query all components for flex
+  function componentsFlex(components) {
+
+    // no components at all means no flex
+    if (components.length === 0)
+      return false;
+
+    // otherwise query components (assume true unless we see false)
+    var isMobile = isMobilePhone();
+    for (var i=0; i<components.length; i++)
+      if (components[i].flex && !components[i].flex(_options.fillPage))
+        return false;
+    return true;
+  }
+
+  // layout all components
+  function componentsLayout(components, title, container) {
+    var isMobile = isMobilePhone();
+    for (var i=0; i<components.length; i++) {
+      var element = components[i].find(container);
+      if (components[i].layout) {
+        // call layout (don't call other components if it returns false)
+        var result = components[i].layout(title, container, element, _options.fillPage);
+        if (result === false)
+          return;
+      }
+    }
+  }
+
+  // get a reference to the h3, discover it's inner html, and remove it
+  function extractTitle(container) {
+    var h3 = container.children('h3').first();
+    var title = '';
+    if (!container.hasClass('no-title'))
+      title = h3.contents();
+    h3.detach();
+    return title;
+  }
+
+  // extract chart notes
+  function extractChartNotes(chartContent, chartNotes) {
+    // look for a terminating blockquote or image caption
+    var blockquote = chartContent.children('blockquote:last-child');
+    var caption = chartContent.children('div.image-container')
+                              .children('p.caption');
+    if (blockquote.length) {
+      chartNotes.empty().append(blockquote.children('p:first-child').contents());
+      blockquote.remove();
+      return true;
+    } else if (caption.length) {
+      chartNotes.empty().append(caption.contents());
+      caption.remove();
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function findShinyOutput(chartContent) {
+    return chartContent.find('.shiny-text-output, .shiny-html-output');
+  }
+
+  // safely detect rendering on a mobile phone
+  function isMobilePhone() {
+    try
+    {
+      return ! window.matchMedia("only screen and (min-width: 768px)").matches;
+    }
+    catch(e) {
+      return false;
+    }
+  }
+
+  function isFillPage() {
+    return _options.fillPage;
+  }
+
+  // detect portrait mode
+  function isPortrait() {
+    return ($(window).width() < $(window).height());
+  }
+
+  // safely detect rendering on a tablet
+  function isTablet() {
+    try
+    {
+      return window.matchMedia("only screen and (min-width: 769px) and (max-width: 992px)").matches;
+    }
+    catch(e) {
+      return false;
+    }
+  }
+
+  // test whether this is a shiny doc
+  function isShinyDoc() {
+    return (typeof(window.Shiny) !== "undefined" && !!window.Shiny.outputBindings);
+  }
+
+  // set flex using vendor specific prefixes
+  function setFlex(el, flex) {
+    el.css('-webkit-box-flex', flex)
+      .css('-webkit-flex', flex)
+      .css('-ms-flex', flex)
+      .css('flex', flex);
+  }
+
+  // support bookmarking of pages
+  function handleLocationHash() {
+
+    // restore tab/page from bookmark
+    var hash = window.decodeURIComponent(window.location.hash);
+    if (hash.length > 0) {
+      // Update the tab without .showPage() so that we don't change page history
+      $('ul.nav a[href="' + hash + '"]').tab('show');
+    }
+
+    // navigate to a tab when the history changes
+    window.addEventListener("popstate", function(e) {
+      var hash = window.decodeURIComponent(window.location.hash);
+      var activeTab = $('ul.nav a[href="' + hash + '"]');
+      if (activeTab.length) {
+        activeTab.tab('show');
+      } else {
+        // returning to the base page URL without a hash activates first tab
+        $('ul.nav a:first').tab('show');
+      }
+    });
+
+    // add a hash to the URL when the user clicks on a tab/page
+    $('.navbar-nav a[data-toggle="tab"]').on('click', function(e) {
+      var baseUrl = FlexDashboardUtils.urlWithoutHash(window.location.href);
+      var hash = FlexDashboardUtils.urlHash($(this).attr('href'));
+      var href = baseUrl + hash;
+      FlexDashboardUtils.setLocation(href);
+    });
+
+    // handle clicks of other links that should activate pages
+    var navPages = $('ul.navbar-nav li a[data-toggle=tab]');
+    navPages.each(function() {
+      var href =  $(this).attr('href');
+      var links = $('a[href="' + href + '"][data-toggle!=tab]');
+      links.each(function() {
+        $(this).on('click', function(e) {
+          window.FlexDashboardUtils.showPage(href);
+        });
+      });
+    });
+  }
+
+  // tweak Prism highlighting
+  function initPrismHighlighting() {
+
+    if (window.Prism) {
+      Prism.languages.insertBefore('r', 'comment', {
+        'heading': [
+          {
+            // title 1
+        	  // =======
+
+        	  // title 2
+        	  // -------
+        	  pattern: /\w+.*(?:\r?\n|\r)(?:====+|----+)/,
+            alias: 'operator'
+          },
+          {
+            // ### title 3
+            pattern: /(^\s*)###[^#].+/m,
+            lookbehind: true,
+            alias: 'operator'
+          }
+        ]
+      });
+
+      // prism highlight
+      Prism.highlightAll();
+    }
+  }
+
+  FlexDashboard.prototype = {
+    constructor: FlexDashboard,
+    init: init,
+    isMobilePhone: isMobilePhone,
+    isFillPage: isFillPage
+  };
+
+  return FlexDashboard;
+
+})();
+
+// utils
+window.FlexDashboardUtils = {
+  resizableImage: function(img) {
+    var src = img.attr('src');
+    var url = 'url("' + src + '")';
+    img.parent().css('background', url)
+                .css('background-size', 'contain')
+                .css('background-repeat', 'no-repeat')
+                .css('background-position', 'center')
+                .addClass('image-container');
+  },
+  setLocation: function(href) {
+    if (history && history.pushState) {
+      history.pushState(null, null, href);
+    } else {
+      window.location.replace(href);
+    }
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+    }, 10);
+  },
+  showPage: function(href) {
+    $('ul.navbar-nav li a[href="' + href + '"]').tab('show');
+    var baseUrl = this.urlWithoutHash(window.location.href);
+    var loc = baseUrl + href;
+    this.setLocation(loc);
+  },
+  showLinkedValue: function(href) {
+    // check for a page link
+    if ($('ul.navbar-nav li a[data-toggle=tab][href="' + href + '"]').length > 0)
+      this.showPage(href);
+    else
+      window.open(href);
+  },
+  urlWithoutHash: function(url) {
+    var hashLoc = url.indexOf('#');
+    if (hashLoc != -1)
+      return url.substring(0, hashLoc);
+    else
+      return url;
+  },
+  urlHash: function(url) {
+    var hashLoc = url.indexOf('#');
+    if (hashLoc != -1)
+      return url.substring(hashLoc);
+    else
+      return "";
+  }
+};
+
+window.FlexDashboard = new FlexDashboard();
+
+// empty content
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    if (container.find('p').length == 0)
+      return container;
+    else
+      return $();
+  }
+})
+
+// plot image
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('p')
+                    .children('img:only-child');
+  },
+
+  layout: function(title, container, element, fillPage) {
+    FlexDashboardUtils.resizableImage(element);
+  }
+});
+
+// plot image (figure style)
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('div.figure').children('img');
+  },
+
+  layout: function(title, container, element, fillPage) {
+    FlexDashboardUtils.resizableImage(element);
+  }
+});
+
+// htmlwidget
+window.FlexDashboardComponents.push({
+
+  init: function(dashboardContainer) {
+    // trigger "shown" after initial layout to force static htmlwidgets
+    // in runtime: shiny to be resized after the dom has been transformed
+    dashboardContainer.on('flexdashboard:layoutcomplete', function(event) {
+      setTimeout(function() {
+        dashboardContainer.trigger('shown');
+      }, 200);
+    });
+  },
+
+  find: function(container) {
+    return container.children('div[id^="htmlwidget-"],div.html-widget');
+  }
+});
+
+// gauge
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('div.html-widget.gauge');
+  },
+
+  flex: function(fillPage) {
+    return false;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+
+  }
+
+});
+
+// shiny output
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    return container.children('div[class^="shiny-"]');
+  }
+});
+
+// bootstrap table
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    var bsTable = container.find('table.table');
+    if (bsTable.length !== 0)
+      return bsTable;
+    else
+      return container.find('tr.header').parent('thead').parent('table');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+    // alias variables
+    var bsTable = element;
+
+    // fixup xtable generated tables with a proper thead
+    var headerRow = bsTable.find('tbody > tr:first-child > th').parent();
+    if (headerRow.length > 0) {
+      var thead = $('<thead></thead>');
+      bsTable.prepend(thead);
+      headerRow.detach().appendTo(thead);
+    }
+
+    // improve appearance
+    container.addClass('bootstrap-table');
+
+    // for fill page provide scrolling w/ sticky headers
+    if (fillPage) {
+      // force scrollbar on overflow
+      container.addClass('flowing-content-shim');
+
+      // stable table headers when scrolling
+      bsTable.stickyTableHeaders({
+        scrollableArea: container
+      });
+    }
+  }
+});
+
+// embedded shiny app
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.find('iframe.shiny-frame');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+    if (fillPage) {
+      element.attr('height', '100%');
+    } else {
+      // provide default height if necessary
+      var height = element.get(0).style.height;
+      if (!height)
+        height = element.attr('height');
+      if (!height)
+        element.attr('height', 500);
+    }
+  }
+});
+
+// shiny fillRow or fillCol
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.find('.flexfill-container');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+    if (fillPage)
+      element.css('height', '100%');
+    else {
+      // provide default height if necessary
+      var height = element.get(0).style.height;
+      if (height === "100%" || height === "auto" || height === "initial" ||
+          height === "inherit" || !height) {
+        element.css('height', 500);
+      }
+    }
+  }
+});
+
+// valueBox
+window.FlexDashboardComponents.push({
+
+  type: "custom",
+
+  find: function(container) {
+    if (container.find('span.value-output, .shiny-valuebox-output').length)
+      return container;
+    else
+      return $();
+  },
+
+  flex: function(fillPage) {
+    return false;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+    // alias variables
+    var chartTitle = title;
+    var valueBox = element;
+
+    // add value-box class to container
+    container.addClass('value-box');
+
+    // value paragraph
+    var value = $('<p class="value"></p>');
+
+    // if we have shiny-text-output then just move it in
+    var valueOutputSpan = [];
+    var shinyOutput = valueBox.find('.shiny-valuebox-output').detach();
+    if (shinyOutput.length) {
+      valueBox.children().remove();
+      shinyOutput.html("&mdash;");
+      value.append(shinyOutput);
+    } else {
+      // extract the value (remove leading vector index)
+      var chartValue = valueBox.text().trim();
+      chartValue = chartValue.replace("[1] ", "");
+      valueOutputSpan = valueBox.find('span.value-output').detach();
+      valueBox.children().remove();
+      value.text(chartValue);
+    }
+
+    // caption
+    var caption = $('<p class="caption"></p>');
+    caption.append(chartTitle);
+
+    // build inner div for value box and add it
+    var inner = $('<div class="inner"></div>');
+    inner.append(value);
+    inner.append(caption);
+    valueBox.append(inner);
+
+    // add icon if specified
+    var icon = $('<div class="icon"><i></i></div>');
+    valueBox.append(icon);
+    function setIcon(chartIcon) {
+      var iconLib = "";
+      var iconSplit = chartIcon.split(" ");
+      if (iconSplit.length > 1) {
+        iconLib = iconSplit[0];
+        chartIcon = iconSplit.slice(1).join(" ");
+      } else {
+        var components = chartIcon.split("-");
+        if (components.length > 1)
+          iconLib = components[0];
+      }
+      icon.children('i').attr('class', iconLib + ' ' + chartIcon);
+    }
+    var chartIcon = valueBox.attr('data-icon');
+    if (chartIcon)
+      setIcon(chartIcon);
+
+    // handle data attributes in valueOutputSpan
+    function handleValueOutput(valueOutput) {
+
+      // caption
+      var dataCaption = valueOutput.attr('data-caption');
+      if (dataCaption)
+        caption.html(dataCaption);
+
+      // icon
+      var dataIcon = valueOutput.attr('data-icon');
+      if (dataIcon)
+        setIcon(dataIcon);
+
+      // If valueBox(color=) was an accent color, this attr should
+      // be populated with the accent color and the relevant CSS comes
+      // in through HTML dependencies
+      var dataColorAccent = valueOutput.attr('data-color-accent');
+      var valueBoxClasses = "value-box-" + (["primary", "info", "danger", "warning", "success"].join(" value-box-"));
+      if (dataColorAccent) {
+        valueBox.removeClass(valueBoxClasses);
+        valueBox.addClass('value-box-' + dataColorAccent);
+      }
+
+      // If valueBox(color=) was a CSS color, these other data-color-*
+      // attrs will be populated
+      var dataColor = valueOutput.attr('data-color');
+      if (dataColor) {
+        valueBox.removeClass(valueBoxClasses);
+        valueBox.css('background-color', dataColor);
+      }
+      var dataColorText = valueOutput.attr('data-color-text');
+      if (dataColorText) {
+        valueBox.find(".inner").css('color', dataColorText);
+      }
+      var dataColorIcon = valueOutput.attr('data-color-icon');
+      if (dataColorIcon) {
+        valueBox.find(".icon").css('color', dataColorIcon);
+      }
+
+      // url
+      var dataHref = valueOutput.attr('data-href');
+      if (dataHref) {
+        valueBox.addClass('linked-value');
+        valueBox.off('click.value-box');
+        valueBox.on('click.value-box', function(e) {
+          window.FlexDashboardUtils.showLinkedValue(dataHref);
+        });
+      }
+    }
+
+    // check for a valueOutputSpan
+    if (valueOutputSpan.length > 0) {
+      handleValueOutput(valueOutputSpan);
+    }
+
+    // if we have a shinyOutput then bind a listener to handle
+    // new valueOutputSpan values
+    shinyOutput.on('shiny:value',
+      function(event) {
+        var element = $(event.target);
+        setTimeout(function() {
+          var valueOutputSpan = element.find('span.value-output');
+          if (valueOutputSpan.length > 0)
+            handleValueOutput(valueOutputSpan);
+        }, 10);
+      }
+    );
+  }
+});
+</script>
+
+<div id="dashboard-container">
+
+<div id="column" class="section level2" data-width="650">
+<h2>Column</h2>
+<div id="scoring-by-cuisine-type-across-the-boroughs"
+class="section level3">
+<h3>Scoring by Cuisine Type Across the Boroughs</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-80ec675b9f330180ce66" style="width:600px;height:500px;" class="plotly html-widget "></div>
+<script type="application/json" data-for="htmlwidget-80ec675b9f330180ce66">{"x":{"visdat":{"fb8b5d79d562":["function () ","plotlyVisDat"]},"cur_data":"fb8b5d79d562","attrs":{"fb8b5d79d562":{"x":{},"y":{},"mode":"markers","text":{},"color":{},"colors":"viridis","alpha":0.5,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"width":600,"height":500,"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Cuisine Type","type":"category","categoryorder":"array","categoryarray":["African","American","Asian","Bagels/Pretzels","Bakery","Bangladeshi","Bottled beverages, including water, sodas, juices, etc.","CafÃ©/Coffee/Tea","Caribbean","Chicken","Chinese","Chinese/Japanese","Continental","Creole","Delicatessen","Eastern European","Filipino","French","Greek","Hamburgers","Ice Cream, Gelato, Yogurt, Ices","Indian","Irish","Italian","Japanese","Jewish/Kosher","Juice, Smoothies, Fruit Salads","Korean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mediterranean","Mexican","Middle Eastern","Pakistani","Pancakes/Waffles","Peruvian","Pizza","Pizza/Italian","Polish","Polynesian","Salads","Sandwiches","Sandwiches/Salads/Mixed Buffet","Seafood","Soul Food","Spanish","Steak","Tapas","Tex-Mex","Thai","Turkish","Vegetarian","Vietnamese/Cambodian/Malaysia"]},"font":["function (x) ","UseMethod(\"t\")"],"yaxis":{"domain":[0,1],"automargin":true,"title":"Score"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["American","American","American","American","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Mexican","Mexican","Mexican","Mexican","Mexican","Mexican","Mexican","Mexican","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","Spanish","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","Spanish","American","American","Spanish","Mexican","Mexican","Spanish","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","American","Spanish","Pizza/Italian","Chicken","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chicken","Chicken","African","African","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chicken","African","African","Chicken","Chicken","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","African","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Sandwiches","Sandwiches","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Sandwiches","Caribbean","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Caribbean","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Sandwiches","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Sandwiches","Pizza","Pizza","Pizza","Pizza","Caribbean","Caribbean","Caribbean","Caribbean","Pizza","Pizza","Caribbean","Pizza","American","Spanish","American","Spanish","American","American","Irish","American","American","Spanish","Irish","American","American","Pizza/Italian","Spanish","American","American","Middle Eastern","Spanish","Spanish","American","American","Middle Eastern","Middle Eastern","Chinese","American","Middle Eastern","Tapas","Tapas","Tapas","Tapas","Mexican","Tapas","Tapas","Pizza/Italian","American","American","American","American","Caribbean","Caribbean","Caribbean","Caribbean","Pizza","Pancakes/Waffles","Caribbean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Caribbean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","CafÃ©/Coffee/Tea","CafÃ©/Coffee/Tea","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Caribbean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","CafÃ©/Coffee/Tea","Pancakes/Waffles","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Pancakes/Waffles","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Caribbean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Pancakes/Waffles","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Pancakes/Waffles","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","CafÃ©/Coffee/Tea","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Caribbean","CafÃ©/Coffee/Tea","CafÃ©/Coffee/Tea","Caribbean","Caribbean","Caribbean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Spanish","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Mexican","Mexican","Mexican","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Mexican","Mexican","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","American","American","Caribbean","American","Caribbean","Spanish","Caribbean","American","Caribbean","Caribbean","Caribbean","American","American","American","American","American","American","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","Spanish","Spanish","Spanish","Spanish","Spanish","Spanish","Spanish","Spanish","Spanish","Italian","Italian","Italian","Italian","Italian"],"y":[32,32,32,32,33,33,33,33,31,33,33,33,33,31,31,33,33,33,31,33,31,33,42,42,42,42,42,42,42,31,5,45,31,44,31,2,44,45,44,44,31,31,44,31,31,44,45,31,31,45,6,45,45,6,6,31,31,44,2,51,48,51,51,52,52,48,51,52,52,51,51,48,48,52,48,4,30,30,30,30,30,4,46,46,44,46,4,9,52,44,4,9,52,52,44,44,9,44,46,52,52,44,44,46,29,38,29,38,35,35,35,35,29,38,35,29,38,30,40,30,38,40,32,40,38,30,32,0,38,2,30,40,38,35,10,10,35,35,35,35,4,35,35,36,36,36,36,2,36,36,2,48,48,48,48,32,32,32,32,0,41,56,40,40,41,56,30,41,33,33,30,56,41,30,33,41,40,41,30,41,30,56,41,41,41,41,41,33,40,56,33,33,56,56,56,40,30,29,4,33,34,29,33,29,29,29,34,34,33,29,33,33,34,4,34,33,33,34,10,31,31,41,31,41,10,41,31,41,41,41,31,31,31,31,31,31,31,2,29,29,29,29,55,55,55,55,55,55,54,54,54,54,54],"mode":"markers","text":["Zip Code:10451","Zip Code:10451","Zip Code:10451","Zip Code:10451","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10452","Zip Code:10453","Zip Code:10453","Zip Code:10453","Zip Code:10453","Zip Code:10453","Zip Code:10453","Zip Code:10453","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10454","Zip Code:10455","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10456","Zip Code:10457","Zip Code:10457","Zip Code:10457","Zip Code:10457","Zip Code:10457","Zip Code:10457","Zip Code:10457","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10458","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10459","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10461","Zip Code:10462","Zip Code:10462","Zip Code:10462","Zip Code:10462","Zip Code:10462","Zip Code:10462","Zip Code:10462","Zip Code:10462","Zip Code:10462","Zip Code:10462","Zip Code:10463","Zip Code:10463","Zip Code:10463","Zip Code:10463","Zip Code:10463","Zip Code:10463","Zip Code:10463","Zip Code:10464","Zip Code:10465","Zip Code:10465","Zip Code:10465","Zip Code:10465","Zip Code:10466","Zip Code:10466","Zip Code:10466","Zip Code:10466","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10467","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10468","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10469","Zip Code:10470","Zip Code:10470","Zip Code:10470","Zip Code:10470","Zip Code:10470","Zip Code:10470","Zip Code:10470","Zip Code:10471","Zip Code:10472","Zip Code:10472","Zip Code:10472","Zip Code:10472","Zip Code:10474","Zip Code:10474","Zip Code:10474","Zip Code:10474","Zip Code:10474","Zip Code:10474","Zip Code:10475","Zip Code:10475","Zip Code:10475","Zip Code:10475","Zip Code:10475"],"type":"scatter","name":"BRONX","marker":{"color":"rgba(68,1,84,0.5)","line":{"color":"rgba(68,1,84,1)"}},"textfont":{"color":"rgba(68,1,84,0.5)"},"error_y":{"color":"rgba(68,1,84,0.5)"},"error_x":{"color":"rgba(68,1,84,0.5)"},"line":{"color":"rgba(68,1,84,0.5)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Japanese","American","Middle Eastern","American","American","American","Japanese","American","Japanese","American","Middle Eastern","Japanese","Middle Eastern","American","American","Japanese","Pizza","Caribbean","American","American","Caribbean","Creole","Caribbean","American","American","Chicken","Chinese","American","American","Caribbean","Caribbean","Caribbean","Chinese","Caribbean","Caribbean","Caribbean","Creole","Creole","Creole","Chicken","Caribbean","Caribbean","American","Creole","Caribbean","Mediterranean","Mediterranean","Japanese","Soul Food","Jewish/Kosher","Jewish/Kosher","Jewish/Kosher","Japanese","Japanese","Japanese","Japanese","Soul Food","Japanese","Japanese","Soul Food","Soul Food","Jewish/Kosher","Jewish/Kosher","Vegetarian","Vegetarian","Vegetarian","Vegetarian","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","Chinese","American","American","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","Chinese","Caribbean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Caribbean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Caribbean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Caribbean","Caribbean","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","American","American","American","Middle Eastern","American","Middle Eastern","Chinese","Middle Eastern","American","Middle Eastern","American","Middle Eastern","Japanese","American","American","Middle Eastern","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","Chinese","Bakery","Chinese","Chinese","Chinese","Jewish/Kosher","Chinese","Bakery","Jewish/Kosher","Bakery","Jewish/Kosher","Chinese","Chinese","Chinese","American","Jewish/Kosher","Chinese","Jewish/Kosher","American","Jewish/Kosher","American","American","Jewish/Kosher","Chinese","Pizza","Caribbean","Caribbean","Pizza","Caribbean","Caribbean","Caribbean","Caribbean","Chinese","Caribbean","Caribbean","Caribbean","Chinese","Caribbean","Chinese","Seafood","Chinese","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Chinese","Caribbean","Chicken","Seafood","Pizza/Italian","Seafood","Chicken","Spanish","Pizza/Italian","Chinese","Eastern European","Chinese","Chinese","Spanish","Chinese","Pizza/Italian","Chinese","Pizza/Italian","Pizza/Italian","Chinese","Chinese","Chinese","Pizza/Italian","Chinese","Chinese","Chinese","Chinese","American","American","Eastern European","Chinese","Spanish","Spanish","Bagels/Pretzels","Thai","Seafood","Seafood","Seafood","Seafood","Thai","Seafood","Chinese","Seafood","Seafood","Seafood","Thai","Thai","Thai","Thai","Seafood","Thai","African","French","French","French","African","French","French","French","Chinese","Chinese","Bagels/Pretzels","Italian","Chinese","Pizza","Bagels/Pretzels","Bagels/Pretzels","Pizza","Pizza","Pizza","Pizza","Chinese","Chinese","Chinese","Bagels/Pretzels","Bagels/Pretzels","Pizza","Italian","Chinese","Italian","Tex-Mex","Bagels/Pretzels","Jewish/Kosher","Jewish/Kosher","Jewish/Kosher","Eastern European","Bangladeshi","Bangladeshi","Bangladeshi","Jewish/Kosher","Middle Eastern","Jewish/Kosher","Jewish/Kosher","Bangladeshi","Bangladeshi","Jewish/Kosher","Jewish/Kosher","Bangladeshi","Eastern European","Eastern European","Jewish/Kosher","Bangladeshi","Jewish/Kosher","Bangladeshi","Eastern European","Indian","Juice, Smoothies, Fruit Salads","Chinese","Chinese","Chinese","Chinese","Bagels/Pretzels","Chinese","Chinese","Chinese","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Middle Eastern","Chinese","Chinese","Indian","Chinese","Mexican","Mexican","Chinese","Mexican","Middle Eastern","Delicatessen","Mexican","Mexican","Juice, Smoothies, Fruit Salads","Chinese","Chinese","Chinese","Indian","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Delicatessen","Bakery","Chinese","Bagels/Pretzels","Chinese","Chinese","Chinese","Middle Eastern","Indian","Indian","Chinese","Delicatessen","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Middle Eastern","Chinese","Chinese","Indian","Indian","Middle Eastern","Bagels/Pretzels","Chinese","Bagels/Pretzels","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Indian","Chinese","Chinese","Chinese","Chinese","CafÃ©/Coffee/Tea","Polish","Polish","Polish","Mexican","American","American","Spanish","Spanish","Spanish","American","American","Spanish","Spanish","Chicken","Chicken","Chicken","Chicken","American","American","American","American","American","American","American","American","American","American","American","American","American","Creole","Creole","Creole","Creole","Creole","Creole","Caribbean","Creole","Creole","Hamburgers","Creole","Creole","Creole","Pizza","Pizza","Pizza/Italian","Pizza/Italian","Pizza","Pizza/Italian","Pizza","Pizza","Pizza","Pizza","Pizza","Pizza","Mexican","Mexican","Mexican","Mexican","Bakery","Bakery","Pizza","Pizza","Mexican","Bakery","Pizza","Bakery","Bakery","Mexican","Mexican","Mexican","Bakery","Chinese","Pizza","Jewish/Kosher","Jewish/Kosher","Jewish/Kosher","Jewish/Kosher","Jewish/Kosher","Chinese","Jewish/Kosher","Chinese","Jewish/Kosher","Pakistani","Jewish/Kosher","Jewish/Kosher","Jewish/Kosher","Chinese","Chinese","American","American","American","American","American","American","American","American","American","American","American","American","American","American","Spanish","Spanish","Spanish","Spanish","Chicken","CafÃ©/Coffee/Tea","CafÃ©/Coffee/Tea","CafÃ©/Coffee/Tea","American","Chicken","American","Caribbean","Caribbean","American","CafÃ©/Coffee/Tea","American","American","Caribbean","American","CafÃ©/Coffee/Tea","CafÃ©/Coffee/Tea","American","American","Chicken","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Bagels/Pretzels","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Turkish","Turkish","Turkish","Turkish","Caribbean","Caribbean","Caribbean","Delicatessen","Delicatessen","Delicatessen","Caribbean","Caribbean","Delicatessen","Caribbean","Spanish","Spanish","Caribbean","Spanish","Caribbean","Delicatessen","Caribbean","Caribbean","Caribbean","Delicatessen","Spanish","Spanish","Caribbean","Spanish","Mexican","Spanish","Spanish","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Mexican","Mexican","Mexican","Mexican","Pizza","Mexican","Mexican","Mexican","Spanish","Pizza","Mexican","Mexican","American","American","African","Mexican","American","Seafood","Seafood","Seafood","Seafood"],"y":[31,40,42,45,45,45,31,40,31,45,42,31,42,45,40,31,2,12,44,44,12,47,37,44,44,33,4,44,44,37,37,12,4,30,37,30,47,47,47,33,37,37,44,47,37,32,32,30,46,29,29,29,30,30,30,30,46,30,30,46,46,29,29,31,31,31,31,29,28,41,29,28,28,28,5,41,29,29,41,28,28,5,41,31,40,33,31,30,33,30,30,33,31,3,30,40,33,40,31,31,30,40,33,9,9,32,33,32,5,32,40,32,40,32,2,40,33,32,34,34,34,34,34,33,30,38,30,28,30,48,30,38,48,38,48,28,30,30,33,48,28,48,33,48,33,33,48,28,32,40,40,32,40,40,48,33,42,48,33,48,42,33,42,35,42,33,2,33,48,33,48,33,42,48,33,35,28,35,33,49,29,33,5,33,33,49,32,29,32,29,29,32,33,33,29,32,32,32,32,5,5,5,33,49,49,2,31,61,61,61,61,31,61,2,61,61,61,31,31,31,31,61,31,35,40,40,40,35,40,40,40,36,36,43,33,36,33,43,43,33,33,33,33,36,36,36,43,43,33,33,36,33,0,43,28,28,35,28,28,34,34,35,2,35,28,28,34,28,35,28,28,28,28,28,28,28,28,15,6,29,42,29,4,30,14,14,42,9,29,39,38,4,29,28,42,39,39,29,39,38,11,39,39,6,32,14,4,28,10,29,29,11,10,32,30,29,32,0,38,15,28,32,11,29,9,38,42,29,28,15,38,30,32,30,14,29,28,32,16,16,16,4,9,9,9,2,50,50,30,30,30,50,50,30,28,46,46,46,46,38,28,28,38,38,38,28,38,38,38,38,28,28,32,32,33,33,32,33,3,33,33,2,32,33,32,32,32,34,34,32,34,32,32,32,32,31,31,53,53,53,53,58,58,31,31,53,58,31,58,58,53,53,53,58,30,2,32,40,32,32,32,30,40,30,40,2,32,32,40,30,30,61,32,32,61,32,61,32,32,61,32,61,61,61,61,30,30,30,30,43,31,31,31,47,43,47,40,40,47,31,47,47,40,47,31,31,47,47,43,54,54,54,54,54,54,54,54,0,54,33,33,54,54,33,49,49,49,49,46,46,46,29,29,29,12,12,29,46,36,36,32,36,32,29,12,11,46,29,36,36,11,36,7,3,5,34,2,34,28,7,34,28,30,28,34,34,5,30,34,28,32,32,4,0,32,28,28,28,28],"mode":"markers","text":["Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11201","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11203","Zip Code:11204","Zip Code:11204","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11205","Zip Code:11206","Zip Code:11206","Zip Code:11206","Zip Code:11206","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11207","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11208","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11209","Zip Code:11210","Zip Code:11210","Zip Code:11210","Zip Code:11210","Zip Code:11210","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11211","Zip Code:11212","Zip Code:11212","Zip Code:11212","Zip Code:11212","Zip Code:11212","Zip Code:11212","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11213","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11214","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11215","Zip Code:11216","Zip Code:11216","Zip Code:11216","Zip Code:11216","Zip Code:11216","Zip Code:11216","Zip Code:11216","Zip Code:11216","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11217","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11218","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11220","Zip Code:11221","Zip Code:11221","Zip Code:11221","Zip Code:11222","Zip Code:11222","Zip Code:11222","Zip Code:11222","Zip Code:11222","Zip Code:11223","Zip Code:11223","Zip Code:11223","Zip Code:11223","Zip Code:11223","Zip Code:11223","Zip Code:11223","Zip Code:11223","Zip Code:11223","Zip Code:11224","Zip Code:11224","Zip Code:11224","Zip Code:11224","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11225","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11226","Zip Code:11228","Zip Code:11228","Zip Code:11228","Zip Code:11228","Zip Code:11228","Zip Code:11228","Zip Code:11228","Zip Code:11228","Zip Code:11228","Zip Code:11228","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11229","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11230","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11231","Zip Code:11232","Zip Code:11232","Zip Code:11232","Zip Code:11232","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11233","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11234","Zip Code:11235","Zip Code:11235","Zip Code:11235","Zip Code:11235","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11236","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11237","Zip Code:11238","Zip Code:11238","Zip Code:11238","Zip Code:11238","Zip Code:11238","Zip Code:11239","Zip Code:11239","Zip Code:11239","Zip Code:11239"],"type":"scatter","name":"BROOKLYN","marker":{"color":"rgba(59,82,139,0.5)","line":{"color":"rgba(59,82,139,1)"}},"textfont":{"color":"rgba(59,82,139,0.5)"},"error_y":{"color":"rgba(59,82,139,0.5)"},"error_x":{"color":"rgba(59,82,139,0.5)"},"line":{"color":"rgba(59,82,139,0.5)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Asian","American","American","American","American","Chinese","Asian","Korean","Delicatessen","Delicatessen","American","American","Asian","Asian","American","American","Korean","Chinese","Korean","Korean","Delicatessen","Delicatessen","American","Chinese","Delicatessen","American","Chinese","Korean","American","Chinese","American","American","American","Asian","Delicatessen","Asian","Asian","American","Asian","Delicatessen","Chinese","Peruvian","Chinese","Chinese","Chinese","Peruvian","French","French","Peruvian","Chinese","Peruvian","Bakery","CafÃ©/Coffee/Tea","CafÃ©/Coffee/Tea","French","Chinese","French","Peruvian","Chinese","Chinese","Bakery","Chinese","Bakery","Chinese","Peruvian","Chinese","Japanese","Asian","Chinese","Vietnamese/Cambodian/Malaysia","Asian","Chinese","American","Asian","Chinese","Vietnamese/Cambodian/Malaysia","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Japanese","Chinese","CafÃ©/Coffee/Tea","Japanese","Vietnamese/Cambodian/Malaysia","Asian","Chinese","Asian","American","Asian","Japanese","Vietnamese/Cambodian/Malaysia","Japanese","Vietnamese/Cambodian/Malaysia","Asian","Japanese","American","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Japanese","Bagels/Pretzels","Japanese","Chinese","Japanese","Asian","American","Japanese","Japanese","Japanese","Japanese","Chinese","Japanese","Bagels/Pretzels","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Vietnamese/Cambodian/Malaysia","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bagels/Pretzels","Japanese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","CafÃ©/Coffee/Tea","Japanese","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Japanese","Japanese","Chinese","American","American","American","American","American","American","American","American","American","American","American","American","American","American","American","American","American","American","Sandwiches/Salads/Mixed Buffet","Sandwiches/Salads/Mixed Buffet","Sandwiches/Salads/Mixed Buffet","American","American","American","American","American","American","Sandwiches/Salads/Mixed Buffet","American","Sandwiches/Salads/Mixed Buffet","Asian","Asian","Asian","Asian","Asian","Asian","Asian","American","Spanish","American","Spanish","American","American","American","Spanish","American","American","Thai","American","Chinese","American","Chinese","American","American","American","American","American","American","American","American","American","American","American","American","American","American","American","Pizza","American","American","American","American","American","CafÃ©/Coffee/Tea","Chicken","CafÃ©/Coffee/Tea","Chinese","American","American","American","American","Sandwiches","Chinese","Chinese","CafÃ©/Coffee/Tea","American","American","American","Chinese","American","Chinese","Chinese","American","Sandwiches","American","American","Chinese","American","American","American","American","Chinese","Italian","Juice, Smoothies, Fruit Salads","Italian","Japanese","Italian","Juice, Smoothies, Fruit Salads","Italian","French","French","Italian","Japanese","Juice, Smoothies, Fruit Salads","Juice, Smoothies, Fruit Salads","Juice, Smoothies, Fruit Salads","Japanese","Chinese","Chinese","Japanese","Bakery","Chinese","Chinese","Chinese","Chinese","Chinese","Japanese","Chinese","Chinese","Bakery","Japanese","Chinese","CafÃ©/Coffee/Tea","Italian","CafÃ©/Coffee/Tea","Bakery","Chinese","Chinese","Chinese","Chinese","Chinese","Bakery","Chinese","Chinese","Chinese","Chinese","Bakery","Italian","Japanese","Chinese","Chinese","Bakery","Chinese","Chinese","Japanese","Chinese","Chinese","Bakery","Chinese","Chinese","Japanese","Italian","Japanese","Chinese","Chinese","Chinese","Chinese","Chinese","Chinese","Chinese","Japanese","Japanese","Chinese","Thai","Chinese","Chinese","Chinese","Italian","Chinese","Chinese","Italian","Italian","Italian","Chinese","Italian","American","Seafood","American","Vegetarian","American","Vegetarian","CafÃ©/Coffee/Tea","Vegetarian","Asian","Seafood","Asian","Vegetarian","Vegetarian","Vegetarian","Asian","Italian","Seafood","Asian","American","American","American","Seafood","CafÃ©/Coffee/Tea","American","Vegetarian","Asian","Asian","Seafood","American","American","Indian","Mediterranean","Indian","Asian","American","American","American","Indian","American","Chinese","Pizza/Italian","Asian","Indian","Indian","American","American","American","American","American","American","American","Indian","Mediterranean","American","Indian","American","Pizza/Italian","Pizza/Italian","Pizza/Italian","Mediterranean","Pizza/Italian","American","American","American","Thai","American","American","American","American","American","Thai","American","Thai","Pizza","American","American","American","American","Thai","American","Thai","American","American","Thai","American","American","Pizza","American","American","American","American","American","Pizza","Thai","Pizza","Thai","American","American","American","American","American","Pizza","American","Pizza","American","American","Chinese","Continental","American","Indian","Chinese","Sandwiches/Salads/Mixed Buffet","Chinese","Chinese","Indian","American","Indian","Continental","Sandwiches/Salads/Mixed Buffet","Chinese","Continental","Continental","Chinese","Continental","Chicken","American","Chicken","Chinese","Chinese","Chinese","Chinese","Chinese","Chinese","Sandwiches/Salads/Mixed Buffet","Chicken","Chinese","American","Chinese","Chinese","Indian","Chinese","Chinese","Sandwiches/Salads/Mixed Buffet","American","Indian","Chinese","Chinese","Chinese","Sandwiches/Salads/Mixed Buffet","Chinese","Chinese","Chicken","American","Chinese","Chinese","Chinese","Thai","American","American","American","American","American","American","American","American","American","American","American","American","Sandwiches/Salads/Mixed Buffet","Sandwiches/Salads/Mixed Buffet","Sandwiches/Salads/Mixed Buffet","American","American","American","American","American","American","Japanese","Italian","Japanese","Japanese","Japanese","Japanese","Japanese","Japanese","Japanese","American","Italian","Japanese","Japanese","Italian","Chinese/Japanese","Italian","Japanese","Japanese","Japanese","American","American","Japanese","Italian","Japanese","Italian","Chinese/Japanese","Steak","Chinese/Japanese","CafÃ©/Coffee/Tea","CafÃ©/Coffee/Tea","Steak","Steak","Steak","CafÃ©/Coffee/Tea","Chinese/Japanese","Steak","Steak","Chinese/Japanese","Steak","Chinese/Japanese","Chinese/Japanese","Chinese/Japanese","CafÃ©/Coffee/Tea","Chinese/Japanese","CafÃ©/Coffee/Tea","American","American","American","American","Asian","American","Asian","American","American","American","Asian","American","American","Mediterranean","Chinese","Asian","Hamburgers","Chinese","Hamburgers","Hamburgers","Mediterranean","Hamburgers","Asian","Hamburgers","Chinese","Chinese","Chinese","Japanese","Asian","Asian","Hamburgers","Chinese","Hamburgers","Asian","Hamburgers","Chinese","Asian","Asian","Chinese","American","American","American","American","American","American","American","American","American","Italian","Pizza","Italian","Chinese","Pizza","American","Chinese","Pizza","Italian","Italian","American","Chinese","Italian","Pizza","Italian","American","Pizza","Italian","American","Italian","American","American","Pizza","Chinese","Chinese","Mexican","Mexican","Mexican","Mexican","American","Chinese","American","American","Chinese","Chinese","Chinese","Mexican","Polynesian","Polynesian","American","Juice, Smoothies, Fruit Salads","Mexican","Pizza","Pizza","Juice, Smoothies, Fruit Salads","Polynesian","Pizza","Juice, Smoothies, Fruit Salads","Chinese","Chinese","Juice, Smoothies, Fruit Salads","Pizza","Chinese","Juice, Smoothies, Fruit Salads","Mexican","Chinese","Mexican","Polynesian","American","Juice, Smoothies, Fruit Salads","Polynesian","Pizza","Chinese","Juice, Smoothies, Fruit Salads","Polynesian","Chinese","Pizza","Polynesian","Mexican","Mexican","American","Juice, Smoothies, Fruit Salads","American","Pizza","Pizza","Chinese","American","Caribbean","Caribbean","Caribbean","Mexican","Chinese","Mexican","Italian","Chinese","Bakery","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bakery","Mexican","Tex-Mex","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bakery","Tex-Mex","Chinese","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Mexican","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Tex-Mex","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Italian","Chinese","Bakery","Bakery","Tex-Mex","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Seafood","Seafood","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Seafood","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Seafood","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Seafood","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Seafood","Seafood","Seafood","Seafood","Seafood","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Seafood","Seafood","Delicatessen","Delicatessen","Delicatessen","Delicatessen","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bottled beverages, including water, sodas, juices, etc.","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","American","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Mexican","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Mexican","Mexican","Mexican","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","Caribbean","Spanish","Spanish","Caribbean","Caribbean","Spanish","Caribbean","Spanish","Spanish","Spanish","Salads","Italian","American","Italian","Indian","American","American","Italian","American","Italian","Middle Eastern","Spanish","Indian","Indian","Italian","American","Indian","Chinese","American","American","American","Italian","American","Italian","Indian","Chinese","American","Middle Eastern","Juice, Smoothies, Fruit Salads","American","Pizza","Indian","Middle Eastern","American","American","Pizza","American","Bakery","Chinese","Chinese","Bakery","Bakery","Spanish","Chinese","Chinese","Chinese","Spanish","Chinese","Spanish","Chinese","Spanish","Bakery","Bakery","Bakery","Hamburgers","Hamburgers","Hamburgers","Hamburgers","Hamburgers","Hamburgers","Spanish","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bakery","Spanish","Spanish","Bakery","Spanish","Spanish","Spanish","Bakery","Spanish","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","Spanish","Spanish","Spanish","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","Bakery","Spanish","Spanish","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Indian","Bagels/Pretzels","Indian","Bagels/Pretzels","Indian","Indian","Bagels/Pretzels","Indian","Indian","Indian","Indian","Indian","Bagels/Pretzels","Indian","Pizza","American","Pizza","Italian","Italian","American","American","American","Pizza","American","American","Pizza","Italian","American","Italian","American","Japanese","Japanese","Japanese","Japanese","Japanese"],"y":[29,31,31,50,50,28,29,47,43,43,50,4,29,29,31,50,47,28,47,47,43,43,50,28,43,31,28,47,50,28,31,31,50,29,43,29,29,50,29,43,3,32,63,63,63,32,39,39,32,63,32,10,7,7,39,63,39,32,63,63,2,63,10,63,32,63,32,47,53,34,47,53,30,47,53,34,30,33,32,53,38,31,34,47,53,47,30,47,31,34,32,34,47,31,30,53,33,30,33,32,43,32,53,32,47,30,32,32,32,32,53,32,43,33,34,53,33,43,31,33,38,31,5,33,31,31,53,28,28,39,28,28,32,32,39,28,39,39,28,39,28,32,39,32,53,51,51,51,53,53,53,53,53,53,51,53,51,42,42,42,42,42,42,42,34,42,34,42,34,34,34,42,34,47,28,47,9,47,9,47,47,2,30,37,37,30,30,11,37,11,30,37,37,37,2,37,30,30,37,45,40,0,40,30,35,45,48,48,32,30,30,40,48,45,35,30,48,30,28,45,32,45,35,30,45,45,48,48,30,31,44,31,38,31,44,31,4,4,31,38,44,44,44,38,52,30,33,39,30,42,31,28,42,13,28,28,39,33,31,30,40,30,39,31,29,31,29,29,39,30,42,28,52,39,40,13,42,52,39,52,28,33,29,28,39,52,31,33,40,33,52,28,29,30,28,28,31,33,13,28,2,30,29,52,40,29,28,40,40,40,52,40,56,48,56,29,56,29,33,29,39,48,39,29,29,29,39,2,48,39,56,56,56,48,33,56,29,39,39,48,38,33,37,10,37,4,36,38,38,37,38,5,29,4,37,37,38,33,36,36,36,36,33,37,10,33,37,38,29,29,29,10,29,36,38,38,32,31,39,28,28,28,32,39,32,32,28,38,31,38,32,28,32,28,38,32,31,28,32,39,39,39,39,31,32,32,32,4,39,39,38,28,31,32,28,32,28,28,31,29,39,28,36,48,31,65,28,39,28,29,48,40,29,29,40,29,47,39,47,36,40,40,36,36,36,48,47,65,39,36,65,28,36,65,48,39,28,40,65,31,48,40,65,47,39,31,40,31,0,49,38,49,49,38,49,49,38,49,49,38,49,38,38,38,33,33,33,33,33,28,36,30,40,45,40,36,40,45,40,28,30,36,45,30,0,30,45,36,36,28,28,40,30,36,30,50,33,50,32,32,33,33,33,32,50,33,33,50,33,50,50,50,32,50,32,30,42,42,30,12,30,12,42,42,42,12,42,30,9,33,36,35,7,35,35,9,35,36,35,33,33,7,3,36,36,35,33,35,36,35,33,36,36,33,31,44,31,31,44,44,31,44,52,33,35,33,31,35,52,31,35,33,33,52,31,33,35,33,52,35,33,52,33,52,52,35,31,31,42,42,42,42,47,30,47,47,32,30,30,36,29,29,47,45,36,60,60,45,29,60,45,32,32,45,60,4,45,36,32,36,29,47,45,29,60,32,45,29,4,60,29,36,36,47,45,47,60,60,30,47,33,33,33,29,34,29,7,34,9,40,33,9,29,44,33,40,44,34,29,33,34,29,40,33,29,44,34,33,29,7,34,40,40,44,40,33,34,34,43,31,43,33,31,43,43,34,43,34,31,31,31,34,33,43,34,31,29,29,29,29,29,44,2,44,44,35,41,9,41,35,41,41,28,29,41,35,44,44,41,41,41,44,44,9,29,35,44,35,29,35,29,30,37,30,30,37,37,30,37,30,30,30,2,46,32,46,32,32,3,2,33,46,11,2,32,32,46,32,32,17,33,35,32,46,35,46,32,17,32,11,5,32,7,32,11,35,35,7,35,34,4,4,34,34,32,35,35,35,32,35,32,35,32,34,34,34,43,43,43,43,43,43,41,34,31,31,48,31,34,41,48,34,41,48,41,34,41,28,28,41,48,48,41,31,41,34,48,48,28,31,28,28,28,48,28,83,28,83,28,83,83,28,83,83,83,83,83,28,83,51,2,51,39,39,55,55,55,51,55,55,51,39,55,39,55,28,28,28,28,28],"mode":"markers","text":["Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10001","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10002","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10003","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10004","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10005","Zip Code:10006","Zip Code:10006","Zip Code:10006","Zip Code:10006","Zip Code:10006","Zip Code:10006","Zip Code:10006","Zip Code:10007","Zip Code:10007","Zip Code:10007","Zip Code:10007","Zip Code:10007","Zip Code:10007","Zip Code:10007","Zip Code:10007","Zip Code:10007","Zip Code:10009","Zip Code:10009","Zip Code:10009","Zip Code:10009","Zip Code:10009","Zip Code:10009","Zip Code:10009","Zip Code:10009","Zip Code:10009","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10010","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10011","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10012","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10013","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10014","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10016","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10017","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10018","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10019","Zip Code:10020","Zip Code:10020","Zip Code:10020","Zip Code:10021","Zip Code:10021","Zip Code:10021","Zip Code:10021","Zip Code:10021","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10022","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10023","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10024","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10025","Zip Code:10026","Zip Code:10026","Zip Code:10026","Zip Code:10026","Zip Code:10026","Zip Code:10026","Zip Code:10026","Zip Code:10026","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10027","Zip Code:10028","Zip Code:10028","Zip Code:10028","Zip Code:10028","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10029","Zip Code:10030","Zip Code:10030","Zip Code:10030","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10031","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10032","Zip Code:10033","Zip Code:10033","Zip Code:10033","Zip Code:10033","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10034","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10035","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10036","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10038","Zip Code:10039","Zip Code:10039","Zip Code:10039","Zip Code:10039","Zip Code:10039","Zip Code:10039","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10040","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10065","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10075","Zip Code:10128","Zip Code:10128","Zip Code:10128","Zip Code:10128","Zip Code:10128"],"type":"scatter","name":"MANHATTAN","marker":{"color":"rgba(33,144,141,0.5)","line":{"color":"rgba(33,144,141,1)"}},"textfont":{"color":"rgba(33,144,141,0.5)"},"error_y":{"color":"rgba(33,144,141,0.5)"},"error_x":{"color":"rgba(33,144,141,0.5)"},"line":{"color":"rgba(33,144,141,0.5)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Continental","Continental","Continental","Continental","Continental","Continental","Continental","Continental","American","American","American","American","American","American","American","American","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","American","American","American","American","American","Pizza","Pakistani","Pizza","Pakistani","Pakistani","Eastern European","Eastern European","Pizza","Eastern European","Pizza","Eastern European","Pakistani","Pakistani","Pizza","Eastern European","Eastern European","Greek","Eastern European","American","American","American","American","Eastern European","Mediterranean","Mediterranean","Mediterranean","Mediterranean","Mediterranean","Mediterranean","Japanese","Bangladeshi","Japanese","Bangladeshi","Bangladeshi","Japanese","Bangladeshi","Bangladeshi","Chinese","Asian","Chinese","Asian","Chinese","Chinese","Chinese","Chinese","Asian","Chinese","Chinese","Chinese","Asian","Asian","Korean","Chinese","Asian","Chinese","Asian","Chinese","Korean","Chinese","Chinese","Asian","Asian","Asian","Chinese","Chinese","Chinese","Chinese","Asian","Asian","Asian","Asian","Asian","Chinese","Chinese","Chinese","Korean","Chinese","Korean","Chinese","Chinese","Chinese","Chinese","Chinese","Korean","Chinese","Korean","Chinese","Korean","Korean","Chinese","Chinese","Korean","Korean","Korean","Korean","Korean","Chinese","Korean","Korean","Korean","Korean","Korean","Korean","Korean","Korean","Korean","Korean","Korean","Korean","Korean","Korean","Korean","Chinese","Korean","Korean","Korean","Chinese","Chinese","American","Chinese","Chinese","Chinese","Chinese","American","Chinese","Jewish/Kosher","Jewish/Kosher","Pizza/Italian","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Sandwiches","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Sandwiches","Chinese","Pizza/Italian","Sandwiches","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Pizza/Italian","Pizza/Italian","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Spanish","American","Spanish","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Sandwiches","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Sandwiches","Chinese","American","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Pizza/Italian","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Pizza/Italian","American","Chinese","Bakery","Peruvian","Bangladeshi","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Peruvian","Bakery","Peruvian","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Peruvian","Asian","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bakery","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Peruvian","Chinese","Bangladeshi","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Bangladeshi","Peruvian","Chinese","Peruvian","Chinese","Peruvian","Asian","Bakery","Asian","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bangladeshi","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Chinese","Bangladeshi","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bottled beverages, including water, sodas, juices, etc.","Bottled beverages, including water, sodas, juices, etc.","Bottled beverages, including water, sodas, juices, etc.","Bottled beverages, including water, sodas, juices, etc.","Bottled beverages, including water, sodas, juices, etc.","Bottled beverages, including water, sodas, juices, etc.","Chinese","Chinese","Bottled beverages, including water, sodas, juices, etc.","Jewish/Kosher","Pizza","Jewish/Kosher","Jewish/Kosher","Asian","Asian","Jewish/Kosher","Jewish/Kosher","Asian","Jewish/Kosher","Pizza","Asian","Asian","Jewish/Kosher","Mexican","Filipino","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Pizza","Filipino","Filipino","Filipino","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Filipino","Pizza","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Pizza","Filipino","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Pizza","Chinese","Pizza","Pizza","Pizza","CafÃ©/Coffee/Tea","Pizza","Pizza","Bakery","CafÃ©/Coffee/Tea","Creole","Creole","Creole","Creole","Creole","Seafood","American","American","American","American","American","American","American","American","American","American","Caribbean","Caribbean","Caribbean","Caribbean","Indian","American","Indian","Caribbean","American","Caribbean","Indian","Indian","Caribbean","Indian","Indian","Caribbean","American","Indian","Indian","Caribbean","Indian","Indian","Indian","Caribbean","Caribbean","Italian","Caribbean","Italian","Caribbean","Caribbean","Indian","Caribbean","Caribbean","Indian","Indian","Indian","Caribbean","Caribbean","Indian","Caribbean","Middle Eastern","Chinese","Middle Eastern","American","American","American","American","American","American","Chinese","Chinese","Chinese","Chinese","Chinese","Chinese","Chinese","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Caribbean","Sandwiches","American","American","Sandwiches","American","Sandwiches","American","American","American","Sandwiches","Sandwiches","Sandwiches","Sandwiches","Spanish","American","Spanish","American","Spanish","American","American","American","American","American","Spanish","Spanish","Caribbean","Caribbean","Caribbean","Chinese","Chinese","Chinese","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Latin (Cuban, Dominican, Puerto Rican, South & Central American)"],"y":[44,44,44,44,44,44,44,44,29,29,29,29,29,29,38,32,43,43,43,38,43,43,43,38,38,43,38,43,43,32,43,43,43,43,43,43,32,32,38,43,31,18,31,18,18,28,28,31,28,31,28,18,18,31,28,28,4,7,28,28,28,28,7,35,35,35,35,35,35,40,31,40,31,31,40,31,31,37,33,29,33,33,29,33,37,35,33,33,29,35,33,10,37,33,29,33,37,10,37,33,35,33,33,33,4,29,29,33,35,33,35,35,33,2,31,37,31,37,44,4,31,31,44,37,44,37,31,37,37,44,44,37,29,29,29,29,12,55,38,55,55,38,55,38,55,55,55,55,38,38,55,55,12,55,38,38,12,29,7,29,29,29,29,7,29,9,9,33,35,33,35,33,33,33,33,35,33,35,33,33,30,33,30,32,44,32,30,33,30,33,33,44,30,33,30,33,33,30,33,33,44,50,46,39,28,34,28,39,46,39,34,30,28,28,39,6,46,34,46,34,50,50,30,39,50,28,30,50,28,50,28,39,50,39,50,39,6,46,6,30,28,28,28,34,50,28,50,34,32,32,32,32,32,32,4,4,32,42,30,42,42,44,44,42,42,44,42,30,44,44,42,28,28,38,38,37,28,28,28,38,28,37,38,37,3,38,38,37,0,51,51,51,9,51,51,2,9,33,33,33,33,33,2,38,38,35,35,35,35,35,35,38,35,38,38,38,38,31,35,31,31,35,31,34,31,31,34,31,31,35,31,34,31,31,31,34,31,31,33,36,33,36,36,30,9,9,30,30,30,36,36,30,2,30,0,30,52,52,52,52,52,52,32,32,32,32,32,32,32,53,53,53,53,53,53,36,53,53,36,53,36,53,53,53,36,36,36,36,28,37,28,37,28,37,37,37,37,37,28,3,41,41,41,35,35,35,30,30,30,30],"mode":"markers","text":["Zip Code:11005","Zip Code:11005","Zip Code:11005","Zip Code:11005","Zip Code:11005","Zip Code:11005","Zip Code:11005","Zip Code:11005","Zip Code:11040","Zip Code:11040","Zip Code:11040","Zip Code:11040","Zip Code:11040","Zip Code:11040","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11101","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11102","Zip Code:11103","Zip Code:11104","Zip Code:11104","Zip Code:11104","Zip Code:11104","Zip Code:11104","Zip Code:11104","Zip Code:11105","Zip Code:11105","Zip Code:11105","Zip Code:11105","Zip Code:11105","Zip Code:11105","Zip Code:11106","Zip Code:11106","Zip Code:11106","Zip Code:11106","Zip Code:11106","Zip Code:11106","Zip Code:11106","Zip Code:11106","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11354","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11355","Zip Code:11358","Zip Code:11358","Zip Code:11358","Zip Code:11358","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11362","Zip Code:11365","Zip Code:11365","Zip Code:11365","Zip Code:11365","Zip Code:11365","Zip Code:11365","Zip Code:11365","Zip Code:11365","Zip Code:11367","Zip Code:11367","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11368","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11372","Zip Code:11373","Zip Code:11373","Zip Code:11373","Zip Code:11373","Zip Code:11373","Zip Code:11373","Zip Code:11373","Zip Code:11373","Zip Code:11373","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11374","Zip Code:11375","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11377","Zip Code:11378","Zip Code:11385","Zip Code:11385","Zip Code:11385","Zip Code:11385","Zip Code:11385","Zip Code:11385","Zip Code:11385","Zip Code:11385","Zip Code:11411","Zip Code:11411","Zip Code:11411","Zip Code:11411","Zip Code:11411","Zip Code:11412","Zip Code:11415","Zip Code:11415","Zip Code:11415","Zip Code:11415","Zip Code:11415","Zip Code:11415","Zip Code:11415","Zip Code:11415","Zip Code:11415","Zip Code:11415","Zip Code:11417","Zip Code:11417","Zip Code:11417","Zip Code:11417","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11419","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11420","Zip Code:11421","Zip Code:11421","Zip Code:11421","Zip Code:11426","Zip Code:11426","Zip Code:11426","Zip Code:11426","Zip Code:11426","Zip Code:11426","Zip Code:11427","Zip Code:11427","Zip Code:11427","Zip Code:11427","Zip Code:11427","Zip Code:11427","Zip Code:11427","Zip Code:11428","Zip Code:11428","Zip Code:11428","Zip Code:11428","Zip Code:11428","Zip Code:11428","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11430","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11432","Zip Code:11434","Zip Code:11434","Zip Code:11434","Zip Code:11435","Zip Code:11435","Zip Code:11435","Zip Code:11693","Zip Code:11693","Zip Code:11693","Zip Code:11693"],"type":"scatter","name":"QUEENS","marker":{"color":"rgba(93,200,99,0.5)","line":{"color":"rgba(93,200,99,1)"}},"textfont":{"color":"rgba(93,200,99,0.5)"},"error_y":{"color":"rgba(93,200,99,0.5)"},"error_x":{"color":"rgba(93,200,99,0.5)"},"line":{"color":"rgba(93,200,99,0.5)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["American","American","Pizza","Pizza","Pizza","Pizza","American","American","American","Pizza","Pizza","Pizza","Greek","Greek","Greek","Greek","American","Delicatessen","Delicatessen","American","American","Delicatessen","American","Delicatessen","Delicatessen","American","Delicatessen","Italian","Italian","Italian","Italian","Italian","Ice Cream, Gelato, Yogurt, Ices","Ice Cream, Gelato, Yogurt, Ices","Ice Cream, Gelato, Yogurt, Ices","American","Ice Cream, Gelato, Yogurt, Ices","American","American","American","American","American","Ice Cream, Gelato, Yogurt, Ices"],"y":[30,30,36,36,36,36,30,30,30,36,36,36,30,30,30,30,32,29,29,32,32,29,32,29,29,32,29,37,37,37,37,37,36,36,36,29,36,29,29,29,29,29,36],"mode":"markers","text":["Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10301","Zip Code:10305","Zip Code:10305","Zip Code:10305","Zip Code:10305","Zip Code:10306","Zip Code:10306","Zip Code:10306","Zip Code:10306","Zip Code:10306","Zip Code:10306","Zip Code:10306","Zip Code:10306","Zip Code:10306","Zip Code:10306","Zip Code:10306","Zip Code:10308","Zip Code:10308","Zip Code:10308","Zip Code:10308","Zip Code:10308","Zip Code:10314","Zip Code:10314","Zip Code:10314","Zip Code:10314","Zip Code:10314","Zip Code:10314","Zip Code:10314","Zip Code:10314","Zip Code:10314","Zip Code:10314","Zip Code:10314"],"type":"scatter","name":"STATEN ISLAND","marker":{"color":"rgba(253,231,37,0.5)","line":{"color":"rgba(253,231,37,1)"}},"textfont":{"color":"rgba(253,231,37,0.5)"},"error_y":{"color":"rgba(253,231,37,0.5)"},"error_x":{"color":"rgba(253,231,37,0.5)"},"line":{"color":"rgba(253,231,37,0.5)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="column-1" class="section level2" data-width="600">
+<h2>Column</h2>
+<div id="number-of-graded-c-scores-per-borough" class="section level3">
+<h3>Number of Graded C Scores per Borough</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a1b6681f8c418b78ad9d" style="width:576px;height:460.8px;"></div>
+<script type="application/json" data-for="htmlwidget-a1b6681f8c418b78ad9d">{"x":{"visdat":{"fb8b2641c2aa":["function () ","plotlyVisDat"]},"cur_data":"fb8b2641c2aa","attrs":{"fb8b2641c2aa":{"x":{},"y":{},"color":{},"colors":"viridis","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Boroughs","type":"category","categoryorder":"array","categoryarray":["STATEN ISLAND","BRONX","QUEENS","BROOKLYN","MANHATTAN"]},"font":["function (x) ","UseMethod(\"t\")"],"yaxis":{"domain":[0,1],"automargin":true,"title":"Count"},"legend":{"title":{"text":"Boroughs"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["STATEN ISLAND"],"y":[43],"type":"bar","name":"STATEN ISLAND","marker":{"color":"rgba(68,1,84,1)","line":{"color":"rgba(68,1,84,1)"}},"textfont":{"color":"rgba(68,1,84,1)"},"error_y":{"color":"rgba(68,1,84,1)"},"error_x":{"color":"rgba(68,1,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["BRONX"],"y":[253],"type":"bar","name":"BRONX","marker":{"color":"rgba(59,82,139,1)","line":{"color":"rgba(59,82,139,1)"}},"textfont":{"color":"rgba(59,82,139,1)"},"error_y":{"color":"rgba(59,82,139,1)"},"error_x":{"color":"rgba(59,82,139,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["QUEENS"],"y":[410],"type":"bar","name":"QUEENS","marker":{"color":"rgba(33,144,141,1)","line":{"color":"rgba(33,144,141,1)"}},"textfont":{"color":"rgba(33,144,141,1)"},"error_y":{"color":"rgba(33,144,141,1)"},"error_x":{"color":"rgba(33,144,141,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["BROOKLYN"],"y":[539],"type":"bar","name":"BROOKLYN","marker":{"color":"rgba(93,200,99,1)","line":{"color":"rgba(93,200,99,1)"}},"textfont":{"color":"rgba(93,200,99,1)"},"error_y":{"color":"rgba(93,200,99,1)"},"error_x":{"color":"rgba(93,200,99,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["MANHATTAN"],"y":[890],"type":"bar","name":"MANHATTAN","marker":{"color":"rgba(253,231,37,1)","line":{"color":"rgba(253,231,37,1)"}},"textfont":{"color":"rgba(253,231,37,1)"},"error_y":{"color":"rgba(253,231,37,1)"},"error_x":{"color":"rgba(253,231,37,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="number-of-grade-c-scores-per-month-per-borough"
+class="section level3">
+<h3>Number of Grade C Scores per Month per Borough</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-18969253a616130d6815" style="width:576px;height:460.8px;"></div>
+<script type="application/json" data-for="htmlwidget-18969253a616130d6815">{"x":{"visdat":{"fb8b492705ee":["function () ","plotlyVisDat"]},"cur_data":"fb8b492705ee","attrs":{"fb8b492705ee":{"x":{},"y":{},"mode":"line","color":{},"colors":"viridis","alpha":0.5,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Months in 2016","type":"category","categoryorder":"array","categoryarray":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"font":["function (x) ","UseMethod(\"t\")"],"yaxis":{"domain":[0,1],"automargin":true,"title":"Count"},"legend":{"title":{"text":"Boroughs"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"y":[4,13,13,25,6,57,9,21,13,39,26,27],"mode":"line","type":"scatter","name":"BRONX","marker":{"color":"rgba(68,1,84,0.5)","line":{"color":"rgba(68,1,84,1)"}},"textfont":{"color":"rgba(68,1,84,0.5)"},"error_y":{"color":"rgba(68,1,84,0.5)"},"error_x":{"color":"rgba(68,1,84,0.5)"},"line":{"color":"rgba(68,1,84,0.5)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"y":[30,50,39,13,16,86,45,79,69,42,38,32],"mode":"line","type":"scatter","name":"BROOKLYN","marker":{"color":"rgba(59,82,139,0.5)","line":{"color":"rgba(59,82,139,1)"}},"textfont":{"color":"rgba(59,82,139,0.5)"},"error_y":{"color":"rgba(59,82,139,0.5)"},"error_x":{"color":"rgba(59,82,139,0.5)"},"line":{"color":"rgba(59,82,139,0.5)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"y":[30,36,82,61,45,99,86,174,66,75,48,88],"mode":"line","type":"scatter","name":"MANHATTAN","marker":{"color":"rgba(33,144,141,0.5)","line":{"color":"rgba(33,144,141,1)"}},"textfont":{"color":"rgba(33,144,141,0.5)"},"error_y":{"color":"rgba(33,144,141,0.5)"},"error_x":{"color":"rgba(33,144,141,0.5)"},"line":{"color":"rgba(33,144,141,0.5)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"y":[31,17,44,1,18,62,21,81,36,29,41,29],"mode":"line","type":"scatter","name":"QUEENS","marker":{"color":"rgba(93,200,99,0.5)","line":{"color":"rgba(93,200,99,1)"}},"textfont":{"color":"rgba(93,200,99,0.5)"},"error_y":{"color":"rgba(93,200,99,0.5)"},"error_x":{"color":"rgba(93,200,99,0.5)"},"line":{"color":"rgba(93,200,99,0.5)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Feb","Apr","Jun","Sep","Nov"],"y":[12,9,10,6,6],"mode":"line","type":"scatter","name":"STATEN ISLAND","marker":{"color":"rgba(253,231,37,0.5)","line":{"color":"rgba(253,231,37,1)"}},"textfont":{"color":"rgba(253,231,37,0.5)"},"error_y":{"color":"rgba(253,231,37,0.5)"},"error_x":{"color":"rgba(253,231,37,0.5)"},"line":{"color":"rgba(253,231,37,0.5)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+</div>
+
+<script>
+$(document).ready(function() {
+  // add bootstrap table styles to pandoc tables
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed table-sm');
+
+  // initialize mathjax
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+  document.getElementsByTagName("head")[0].appendChild(script);
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  FlexDashboard.init({
+    fillPage: true,
+    orientation: "columns",
+    storyboard: false,
+    defaultFigWidth: 576,
+    defaultFigHeight: 460,
+    defaultFigWidthMobile: 360,
+    defaultFigHeightMobile: 460,
+    resize_reload: true
+  });
+  var navbar = $(".navbar").first();
+  var body = $("body").first();
+  var sidebar = $(".section.sidebar").first();
+  function addNavbarPadding() {
+    var navHeight = navbar.outerHeight();
+    body.css("padding-top", (navHeight + 8) + "px");
+    sidebar.css("top", navHeight + "px");
+    var resizeEvent = window.document.createEvent("UIEvents");
+    resizeEvent.initUIEvent("resize", true, false, window, 0);
+    window.dispatchEvent(resizeEvent);
+  }
+  if (!window.Shiny) setTimeout(addNavbarPadding, 100);
+  $(document).on("shiny:idle", function() {
+    setTimeout(addNavbarPadding, 50);
+  });
+});
+</script>
+
+</body>
+</html>
